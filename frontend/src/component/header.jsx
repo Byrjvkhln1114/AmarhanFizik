@@ -12,7 +12,7 @@ export const Header = () => {
         className=""
         style={{
           width: "75vw",
-          backgroundColor: "gray",
+          backgroundColor: "",
         }}
       >
         {/* header */}
@@ -25,8 +25,13 @@ export const Header = () => {
           }}
         >
           <img style={{ height: "60px" }} src="Logo.png" alt="" />
-          <div>sdfghukijlhufdghuijuytrdfsfghugyftdrfsfghu</div>
-
+          <div className="w-40vw" style={{ width: "50vw" }}>
+            <div className="d-flex justify-content-end  gap-5">
+              {" "}
+              <div></div>
+              <div></div>
+            </div>
+          </div>
           <Buton></Buton>
         </div>
       </div>

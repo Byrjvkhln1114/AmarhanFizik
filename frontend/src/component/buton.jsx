@@ -1,16 +1,18 @@
 export const Buton = () => {
   return (
     <button
+      className="butt"
       style={{
         height: "60px",
         width: "200px",
         borderRadius: "25px",
         border: "none",
-        backgroundColor: "linearGradient(blue, cyan)",
         color: "white",
+        fontWeight: "700",
+        fontSize: "18px",
       }}
     >
-      rtfyguhijo
+      Bayjavkhlan
     </button>
   );
 };
