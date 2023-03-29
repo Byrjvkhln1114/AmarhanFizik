@@ -10,7 +10,7 @@ app.use(FormulaRouter);
 const startServer= async ()=>{
   await connectDatabase();
   app.listen(port, () => {
-    console.log(` Port ${port} der asjiinaa`);
+    console.log(` Port ${port} der asjinaa sdaaa`);
   });
 }
 startServer();
