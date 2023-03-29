@@ -1,11 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import axios from 'axios'
-import { useState } from 'react';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "./pages";
+import { Context } from "./context";
+
 function App() {
- 
   return (
-    <div></div>
+    <Context>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </Context>
   );
 }
 
