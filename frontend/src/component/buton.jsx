@@ -5,7 +5,7 @@ export const Buton = ({ content, width, height, onclicker }) => {
       style={{
         height: height,
         width: width,
-        borderRadius: "15px",
+        borderRadius: "10px",
         border: "none",
         color: "white",
         fontWeight: "700",

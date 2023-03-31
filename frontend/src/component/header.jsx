@@ -1,4 +1,4 @@
-import { Buton } from "./Buton";
+import { Drop } from "./Dropdown";
 export const Header = () => {
   return (
     <div
@@ -25,7 +25,7 @@ export const Header = () => {
           }}
         >
           <img style={{ height: "60px" }} src="Logo.png" alt="" />
-          <div className="w-40vw" style={{ width: "50vw" }}>
+          <div className="w-40vw" style={{ width: "55vw" }}>
             <div className="d-flex justify-content-end  gap-5">
               {" "}
               <div>Formula</div>
@@ -33,7 +33,7 @@ export const Header = () => {
               <div>Definition</div>
             </div>
           </div>
-          <Buton width={"200px"} height={"60px"} content={"Username"}></Buton>
+          <Drop></Drop>
         </div>
       </div>
     </div>
