@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "./pages";
+import { Home, Formula } from "./pages";
 import { Context } from "./context";
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/formula" element={<Formula />}></Route>
         </Routes>
       </BrowserRouter>
     </Context>

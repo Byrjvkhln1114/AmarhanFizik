@@ -3,10 +3,10 @@ export const Header = () => {
   return (
     <div
       style={{
-        backgroundColor: "",
         display: "flex",
         justifyContent: "center",
-        marginTop: "2%",
+        height: "10%",
+        alignItems: "center",
       }}
     >
       <div
@@ -16,7 +16,6 @@ export const Header = () => {
           backgroundColor: "",
         }}
       >
-        {/* header */}
         <div
           style={{
             height: "7vh",
@@ -34,7 +33,7 @@ export const Header = () => {
               <div>Definition</div>
             </div>
           </div>
-          <Buton></Buton>
+          <Buton width={"200px"} height={"60px"} content={"Username"}></Buton>
         </div>
       </div>
     </div>

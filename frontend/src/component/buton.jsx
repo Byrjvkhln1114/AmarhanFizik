@@ -1,18 +1,19 @@
-export const Buton = () => {
+export const Buton = ({ content, width, height, onclicker }) => {
   return (
     <button
       className="butt"
       style={{
-        height: "60px",
-        width: "200px",
+        height: height,
+        width: width,
         borderRadius: "15px",
         border: "none",
         color: "white",
         fontWeight: "700",
         fontSize: "18px",
       }}
+      onClick={onclicker}
     >
-      Bayjavkhlan
+      {content}
     </button>
   );
 };

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header } from "../component/header";
+import { Header } from "../component";
 export const Home = () => {
   return (
     <div
@@ -9,9 +9,9 @@ export const Home = () => {
       <Header></Header>
       <h1 className="d-flex mt-5">
         Физик бол асуудал
-        <h1 className="ms-2 " style={{ color: "#f3573c" }}>
+        <span className="ms-2 " style={{ color: "#f3573c" }}>
           БИШ !
-        </h1>
+        </span>
       </h1>
       <div className="d-flex w-75 justify-content-between align-items-center ">
         <div
