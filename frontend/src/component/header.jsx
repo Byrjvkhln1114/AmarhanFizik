@@ -1,4 +1,4 @@
-import { Buton } from "./buton";
+import { Buton } from "./Buton";
 export const Header = () => {
   return (
     <div

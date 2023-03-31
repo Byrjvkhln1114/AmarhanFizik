@@ -1,6 +1,14 @@
 const mongoose = require("mongoose");
 const Formulas = new mongoose.Schema({
   Equation: {
+    type: Array,
+    required: true,
+  },
+  Symbols: {
+    type: Array,
+    required: true,
+  },
+  Equation_model: {
     type: String,
     required: true,
   },
