@@ -17,7 +17,7 @@ export const Footer = () => {
                     <div className="flex flex-col justify-evenly h-[300px]" >
                        <Link to="/"> <div style={{transition:".4s"}} className="no-underline w-[100px] text-[#f3573c] flex justify-start ml-[2vw] items-center text-[20px] pt-1 pb-1 hover:bg-[#f3573c] hover:text-white">HOME</div> </Link>
                        <Link to="/Formula"> <div style={{transition:".4s"}} className="no-underline w-[100px] text-[#f3573c] flex justify-start ml-[2vw] items-center text-[20px] pt-1 pb-1 hover:bg-[#f3573c] hover:text-white">FORMULA</div> </Link>
-                       <Link to="/Definition"> <div style={{transition:".4s"}} className="no-underline w-[100px] text-[#f3573c] flex justify-start ml-[2vw] items-center text-[20px] pt-1 pb-1 hover:bg-[#f3573c] hover:text-white">DEFINITION</div> </Link>
+                       <Link to="/Definition"> <div style={{transition:".4s"}} className="no-underline w-[120px] text-[#f3573c] flex justify-start ml-[2vw] items-center text-[20px] pt-1 pb-1 hover:bg-[#f3573c] hover:text-white">DEFINITION</div> </Link>
                        <Link to="/Circuit"> <div style={{transition:".4s"}} className="no-underline w-[100px] text-[#f3573c] flex justify-start ml-[2vw] items-center text-[20px] pt-1 pb-1 hover:bg-[#f3573c] hover:text-white">CIRCUIT</div   > </Link>
 
                     </div>
