@@ -68,11 +68,13 @@ export const Forgot = () => {
                 height: "5vh",
                 borderRadius: "5px",
                 paddingLeft: "20px",
+                marginBottom: "20px",
               }}
               type="email"
               placeholder="Нууц үг давтах"
             />
           </div>
+          <Buton content={"Нэвтрэх"} width={"100%"} height={"5vh"}></Buton>
         </div>
       </div>
     </div>

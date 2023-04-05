@@ -72,7 +72,7 @@ export const Login = () => {
             </div>
           </div>
 
-          <Buton></Buton>
+          <Buton content={"Нэвтрэх"} width={"100%"} height={"5vh"}></Buton>
 
           <h5
             style={{

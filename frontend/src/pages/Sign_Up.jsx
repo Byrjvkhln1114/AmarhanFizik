@@ -89,7 +89,7 @@ export const Sign_Up = () => {
             />
           </div>
 
-          <Buton></Buton>
+          <Buton content={"Бүртгүүлэх"} width={"100%"} height={"5vh"}></Buton>
         </div>
       </div>
     </div>

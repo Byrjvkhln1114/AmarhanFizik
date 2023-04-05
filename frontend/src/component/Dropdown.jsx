@@ -23,6 +23,9 @@ export const Drop = ({ content }) => {
         <Link style={{ textDecoration: "none" }} to="/login">
           <Dropdown.Item href="#/action-2">Login</Dropdown.Item>
         </Link>
+        <Link style={{ textDecoration: "none" }} to="/signup">
+          <Dropdown.Item href="#/action-2">Sign up</Dropdown.Item>
+        </Link>
       </Dropdown.Menu>
     </Dropdown>
   );

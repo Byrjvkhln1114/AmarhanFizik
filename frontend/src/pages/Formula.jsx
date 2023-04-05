@@ -21,7 +21,6 @@ export const Formula = () => {
     });
     setAns(result.data[0]);
   };
-
   return (
     <div
       className="d-flex flex-column align-items-center"
@@ -31,7 +30,7 @@ export const Formula = () => {
       <div className="w-75 mt-5 d-flex flex-column gap-5">
         {allequations?.data?.map((el, i) => {
           return (
-            <div className="d-flex gap-4 align-items-center" key={i}>
+            <div className="d-flex gap-4 align-items-center text-light" key={i}>
               {i + 1 + ")  " + el?.Equation[0] + " -----> " + el?.Equation[1]}
               <Buton
                 onclicker={() => Calculate(el?._id)}
@@ -45,7 +44,7 @@ export const Formula = () => {
                 onChange={(e) => setA(e.target.value)}
                 type="number"
                 placeholder={el.Symbols[0]}
-              />{" "}
+              />
               <br />
               {el.Symbols[1]}={" "}
               <input

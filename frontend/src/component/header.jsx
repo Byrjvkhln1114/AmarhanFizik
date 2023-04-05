@@ -1,4 +1,6 @@
 import { Drop } from "./Dropdown";
+import { Link } from "react-router-dom";
+
 export const Header = () => {
   return (
     <div
@@ -24,7 +26,10 @@ export const Header = () => {
             alignItems: "center",
           }}
         >
-          <img style={{ height: "60px" }} src="Logo.png" alt="" />
+          <Link to={"/"}>
+            <img style={{ height: "60px" }} src="Logo.png" alt="" />
+          </Link>
+
           <div className="w-40vw" style={{ width: "55vw" }}>
             <div className="d-flex justify-content-end  gap-5">
               {" "}
