@@ -2,7 +2,7 @@ import { Buton } from "../component/Buton";
 import { Header } from "../component/header";
 import { Link } from "react-router-dom";
 
-export const Login = () => {
+export const Forgot = () => {
   return (
     <div
       style={{ background: "#1f1f47", height: "100vh" }}
@@ -23,9 +23,9 @@ export const Login = () => {
         <div className="w-75">
           <p style={{ fontSize: "25px", fontWeight: "300" }}>Тавтай морил!</p>
         </div>
-        <p style={{ color: "#1F1F47", fontSize: "50px" }}>Нэвтрэх</p>
+        <p style={{ color: "#1F1F47", fontSize: "50px" }}>Нууц үг мартсан?</p>
         <div
-          style={{ height: "45vh", width: "20vw" }}
+          style={{ height: "35vh", width: "20vw" }}
           className=" d-flex flex-column justify-content-around"
         >
           <div>
@@ -54,40 +54,25 @@ export const Login = () => {
                 borderRadius: "5px",
                 paddingLeft: "20px",
               }}
-              type="password"
-              placeholder="Нууц үг бичнэ үү"
+              type="email"
+              placeholder="Нууц үг"
             />
-            <div style={{ display: "flex", justifyContent: "flex-end" }}>
-              <Link style={{ textDecoration: "none" }} to="/forgot">
-                <h5
-                  style={{
-                    justifyContent: "end",
-                    color: "#F3573C",
-                    fontWeight: "300",
-                  }}
-                >
-                  Нууц үг мартсан ?
-                </h5>
-              </Link>
-            </div>
           </div>
-
-          <Buton></Buton>
-
-          <h5
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              fontSize: "20px",
-              color: "#F3573C",
-            }}
-          >
-            <span style={{ color: "#7D7D7D" }}>Та бүртгэлтэй юу? ㅤ</span>
-            <Link style={{ textDecoration: "none" }} to="/signup">
-              <span style={{ color: "#F3573C" }}>БҮРТГҮҮЛЭХ</span>
-            </Link>
-            ㅤ
-          </h5>
+          <div>
+            <h5 style={{ fontWeight: "400" }}>Нууц үг давтах</h5>
+            <input
+              style={{
+                border: "1px solid black",
+                outline: "none",
+                width: "20vw",
+                height: "5vh",
+                borderRadius: "5px",
+                paddingLeft: "20px",
+              }}
+              type="email"
+              placeholder="Нууц үг давтах"
+            />
+          </div>
         </div>
       </div>
     </div>
