@@ -1,7 +1,15 @@
 import { Buton } from "../component/Buton";
 import { Header } from "../component/header";
+import axios from "axios";
 
 export const Sign_Up = () => {
+  const UserCreator = async () => {
+    const result = axios.post("localhost:8000/user", {
+      username: "sadas",
+      email: "bata@gmail.com",
+      password: "12345678",
+    });
+  };
   return (
     <div
       style={{ background: "#1f1f47", height: "100vh" }}
