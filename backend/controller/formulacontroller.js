@@ -1,7 +1,8 @@
 const Formulas = require("../database/formulamodel");
 exports.FormulaCreator = async (req, res) => {
-  const { Equation, Symbols, Equation_model } = req.body;
+  const { Equation, Symbols, Equation_model, Temdeg } = req.body;
   await new Formulas({
+    Temdeg: Temdeg,
     Equation: Equation,
     Symbols: Symbols,
     Equation_model: Equation_model,
@@ -23,8 +24,13 @@ exports.FindAllFormulas = async (req, res) => {
 };
 exports.FormulaCalculator = async (req, res) => {
   const { id, symbol } = req.body;
+  console.log(symbol);
   const a = symbol[0];
   const b = symbol[1];
+  const c = symbol[2];
+  const d = symbol[3];
+  const e = symbol[4];
+  const f = symbol[5];
   const formula = await Formulas.find({ _id: id });
   const ans = await eval(formula[0].Equation_model);
   res.send([ans]);
