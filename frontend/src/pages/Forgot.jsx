@@ -74,7 +74,11 @@ export const Forgot = () => {
               placeholder="Нууц үг давтах"
             />
           </div>
-          <Buton content={"Нэвтрэх"} width={"100%"} height={"5vh"}></Buton>
+          <Buton
+            content={"Нууц үг сэргээх"}
+            width={"100%"}
+            height={"5vh"}
+          ></Buton>
         </div>
       </div>
     </div>
