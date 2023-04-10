@@ -51,6 +51,7 @@ export const Home = () => {
           <h2>Хэлхээ</h2>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
