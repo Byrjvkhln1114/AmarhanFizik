@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header } from "../component";
+import { Header, Footer } from "../component";
 export const Home = () => {
   return (
     <div
