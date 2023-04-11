@@ -1,17 +1,37 @@
-const Formulas=require("../database/formulamodel")
+const Formulas = require("../database/formulamodel");
 exports.FormulaCreator = async (req, res) => {
-    const {  Equation } = req.body;
-    await new Formulas({
-      Equation: Equation
-    }).save();
-    res.send("success")
+  const { Equation, Symbols, Equation_model, Temdeg } = req.body;
+  await new Formulas({
+    Temdeg: Temdeg,
+    Equation: Equation,
+    Symbols: Symbols,
+    Equation_model: Equation_model,
+  }).save();
+  res.send("success");
 };
 exports.FindFormulaById = async (req, res) => {
-    const {  _id } =await  req.body;
-    const posts = await Formulas.find({ _id: _id});
-    if (posts=="") {
-      res.send("No data")
-    }else{
-      res.send(posts[0].Equation)
-    }
+  const { _id } = await req.body;
+  const posts = await Formulas.find({ _id: _id });
+  if (posts == "") {
+    res.send("No data");
+  } else {
+    res.send(posts[0]);
+  }
+};
+exports.FindAllFormulas = async (req, res) => {
+  const posts = await Formulas.find({});
+  res.send(posts);
+};
+exports.FormulaCalculator = async (req, res) => {
+  const { id, symbol } = req.body;
+  console.log(symbol);
+  const a = symbol[0];
+  const b = symbol[1];
+  const c = symbol[2];
+  const d = symbol[3];
+  const e = symbol[4];
+  const f = symbol[5];
+  const formula = await Formulas.find({ _id: id });
+  const ans = await eval(formula[0].Equation_model);
+  res.send([ans]);
 };

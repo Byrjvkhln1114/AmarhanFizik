@@ -1,14 +1,20 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "./pages";
+import { Home, Formula } from "./pages";
 import { Context } from "./context";
-
+import { Login } from "./pages/Login";
+import { Sign_Up } from "./pages/Sign_Up";
+import { Forgot } from "./pages/Forgot";
 function App() {
   return (
     <Context>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/formula" element={<Formula />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/signup" element={<Sign_Up />}></Route>
+          <Route path="/forgot" element={<Forgot />}></Route>
         </Routes>
       </BrowserRouter>
     </Context>
