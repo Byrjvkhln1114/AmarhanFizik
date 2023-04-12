@@ -4,6 +4,7 @@ const Formulas = new mongoose.Schema({
     type: Array,
     required: true,
   },
+
   Symbols: {
     type: Array,
     required: true,

@@ -1,8 +1,7 @@
 const Formulas = require("../database/formulamodel");
 exports.FormulaCreator = async (req, res) => {
-  const { Equation, Symbols, Equation_model, Temdeg } = req.body;
+  const { Equation, Symbols, Equation_model, Branches } = req.body;
   await new Formulas({
-    Temdeg: Temdeg,
     Equation: Equation,
     Symbols: Symbols,
     Equation_model: Equation_model,
