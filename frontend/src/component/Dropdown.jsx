@@ -18,13 +18,13 @@ export const Drop = ({ content }) => {
 
       <Dropdown.Menu style={{ width: "200px" }}>
         <Link style={{ textDecoration: "none" }} to="/formula">
-          <Dropdown.Item href="#/action-1">Formula</Dropdown.Item>
+          <Dropdown.Item href="#/action-1">Томьёо</Dropdown.Item>
         </Link>
         <Link style={{ textDecoration: "none" }} to="/login">
-          <Dropdown.Item href="#/action-2">Login</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">Нэвтрэх</Dropdown.Item>
         </Link>
         <Link style={{ textDecoration: "none" }} to="/signup">
-          <Dropdown.Item href="#/action-2">Sign up</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">Бүртгүүлэх</Dropdown.Item>
         </Link>
       </Dropdown.Menu>
     </Dropdown>

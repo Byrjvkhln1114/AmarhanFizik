@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export const Header = () => {
   return (
     <div
+      className="text-light"
       style={{
         display: "flex",
         justifyContent: "center",
@@ -33,9 +34,9 @@ export const Header = () => {
           <div className="w-40vw" style={{ width: "55vw" }}>
             <div className="d-flex justify-content-end  gap-5">
               {" "}
-              <div>Formula</div>
-              <div>Circuit</div>
-              <div>Definition</div>
+              <div> Томьёо</div>
+              <div>Хэлхээ</div>
+              <div>Тайлбар толь</div>
             </div>
           </div>
           <Drop></Drop>

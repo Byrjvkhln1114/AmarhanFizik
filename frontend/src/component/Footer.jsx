@@ -29,14 +29,13 @@ export const Footer = () => {
               </Link>
               <Link to="/Formula" className="no-underline">
                 <div
-                  style={{ transition: ".4s" }} 
+                  style={{ transition: ".4s" }}
                   className="no-underline w-[100px] md:w-[120px] text-[#f3573c] flex justify-start ml-[2vw] items-center text-[10px] sm:text-[20px] pt-1 pb-1 hover:bg-[#f3573c] hover:text-white"
                 >
                   FORMULA
                 </div>
               </Link>
               <Link to="/Definition" className="no-underline">
-                
                 <div
                   style={{ transition: ".4s" }}
                   className="no-underline sm:w-[105px] w-[100px] md:w-[120px] text-[#f3573c] flex justify-start ml-[2vw] items-center text-[10px] sm:text-[20px] pt-1 pb-1 hover:bg-[#f3573c] hover:text-white"
@@ -45,7 +44,6 @@ export const Footer = () => {
                 </div>
               </Link>
               <Link to="/Circuit" className="no-underline">
-                
                 <div
                   style={{ transition: ".4s" }}
                   className="no-underline w-[100px] md:w-[120px] text-[#f3573c] flex justify-start ml-[2vw] items-center text-[10px] sm:text-[20px] pt-1 pb-1 hover:bg-[#f3573c] hover:text-white"
@@ -56,7 +54,7 @@ export const Footer = () => {
             </div>
           </div>
           <div className="flex flex-row mt-[3vh] w-[140px]">
-          <div className="w-[2px] h-[150px] sm:h-[300px] bg-[#f3573c]"></div>
+            <div className="w-[2px] h-[150px] sm:h-[300px] bg-[#f3573c]"></div>
             <div className="flex flex-col justify-evenly h-[150px] sm:h-[300px] ml-[20px]">
               <a href="https://www.instagram.com/tmjn_nasa/" target="_blank">
                 <img
@@ -94,7 +92,7 @@ export const Footer = () => {
               </a>
             </div>
           </div>
-        </div>  
+        </div>
       </div>
     </div>
   );

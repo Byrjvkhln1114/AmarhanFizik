@@ -1,17 +1,10 @@
 import { useEffect, useState } from "react";
-import { Header, Buton } from "../component";
+import { Header, Buton, Footer } from "../component";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 export const Formula = () => {
   const [allequations, setAllequations] = useState([]);
-  const check = 0;
-  useEffect(() => {
-    (async () => {
-      const all = await axios.get("http://localhost:8000/allformula");
-      setAllequations(all);
-    })();
-  }, [check]);
   const [a, setA] = useState("");
   const [b, setB] = useState("");
   const [c, setC] = useState("");
@@ -24,6 +17,14 @@ export const Formula = () => {
   const [ans, setAns] = useState("");
   const [show, setShow] = useState(false);
   const [fdata, setFdata] = useState(null);
+  const check = 0;
+  useEffect(() => {
+    (async () => {
+      const all = await axios.get("http://localhost:8000/allformula");
+      setAllequations(all);
+    })();
+  }, [check]);
+
   const Closer = () => {
     setShow(false);
     setI1(false);
@@ -56,97 +57,102 @@ export const Formula = () => {
     }
   };
   return (
-    <div
-      className="d-flex flex-column align-items-center"
-      style={{ background: "#1f1f47", height: "100vh" }}
-    >
-      <Header></Header>
-      <div>
-        <Modal show={show}>
-          <Modal.Body>
-            <div className="d-flex flex-column">
-              <div>
-                {fdata?.Symbols[0]}={" "}
-                <input
-                  style={{ width: "40px" }}
-                  onChange={(e) => setA(e.target.value)}
-                  type="number"
-                  placeholder={fdata?.Symbols[0]}
-                />
-              </div>
-              <div>
-                {fdata?.Symbols[1]}={" "}
-                <input
-                  style={{ width: "40px" }}
-                  onChange={(e) => setB(e.target.value)}
-                  type="number"
-                  placeholder={fdata?.Symbols[1]}
-                />
-              </div>
-              <div style={{ display: i1 == false ? "none" : "flex" }}>
-                {fdata?.Symbols[2]}={" "}
-                <input
-                  style={{ width: "40px" }}
-                  onChange={(e) => setC(e.target.value)}
-                  type="number"
-                  placeholder={fdata?.Symbols[2]}
-                />
-              </div>
-              <div style={{ display: i2 == false ? "none" : "flex" }}>
-                {fdata?.Symbols[3]}={" "}
-                <input
-                  style={{ width: "40px" }}
-                  onChange={(e) => setD(e.target.value)}
-                  type="number"
-                  placeholder={fdata?.Symbols[3]}
-                />
-              </div>
-              <div style={{ display: i3 == false ? "none" : "flex" }}>
-                {fdata?.Symbols[4]}={" "}
-                <input
-                  style={{ width: "40px" }}
-                  onChange={(e) => setD(e.target.value)}
-                  type="number"
-                  placeholder={fdata?.Symbols[4]}
-                />
-              </div>
+    <div>
+      <div
+        className="d-flex flex-column align-items-center"
+        style={{ background: "#1f1f47", height: "96vh" }}
+      >
+        <Header></Header>
+        <div>
+          <Modal show={show}>
+            <Modal.Body>
+              <div className="d-flex flex-column">
+                <div>
+                  {fdata?.Symbols[0]}={" "}
+                  <input
+                    style={{ width: "40px" }}
+                    onChange={(e) => setA(e.target.value)}
+                    type="number"
+                    placeholder={fdata?.Symbols[0]}
+                  />
+                </div>
+                <div>
+                  {fdata?.Symbols[1]}={" "}
+                  <input
+                    style={{ width: "40px" }}
+                    onChange={(e) => setB(e.target.value)}
+                    type="number"
+                    placeholder={fdata?.Symbols[1]}
+                  />
+                </div>
+                <div style={{ display: i1 == false ? "none" : "flex" }}>
+                  {fdata?.Symbols[2]}={" "}
+                  <input
+                    style={{ width: "40px" }}
+                    onChange={(e) => setC(e.target.value)}
+                    type="number"
+                    placeholder={fdata?.Symbols[2]}
+                  />
+                </div>
+                <div style={{ display: i2 == false ? "none" : "flex" }}>
+                  {fdata?.Symbols[3]}={" "}
+                  <input
+                    style={{ width: "40px" }}
+                    onChange={(e) => setD(e.target.value)}
+                    type="number"
+                    placeholder={fdata?.Symbols[3]}
+                  />
+                </div>
+                <div style={{ display: i3 == false ? "none" : "flex" }}>
+                  {fdata?.Symbols[4]}={" "}
+                  <input
+                    style={{ width: "40px" }}
+                    onChange={(e) => setD(e.target.value)}
+                    type="number"
+                    placeholder={fdata?.Symbols[4]}
+                  />
+                </div>
 
-              {fdata?.Symbols[fdata?.Symbols.length - 1] + "=" + ans}
-              <Buton
-                width={"100px"}
-                height={"40px"}
-                content={"calculate"}
-                variant="primary"
-                onclicker={() => Calculate(fdata?._id)}
-              ></Buton>
-            </div>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={() => Closer()}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </div>
-
-      <div className="w-75 mt-5 d-flex flex-column gap-5">
-        {allequations?.data?.map((el, i) => {
-          return (
-            <div className="d-flex gap-4 align-items-center text-light" key={i}>
-              {i + 1 + ")  " + el?.Equation[0] + " -----> " + el?.Equation[1]}
-              <Buton
-                width={"100px"}
-                height={"40px"}
-                content={"edit"}
-                variant="primary"
-                onclicker={() => edit(el?._id)}
+                {fdata?.Symbols[fdata?.Symbols.length - 1] + "=" + ans}
+                <Buton
+                  width={"120px"}
+                  height={"40px"}
+                  content={"Тооцоолох"}
+                  variant="primary"
+                  onclicker={() => Calculate(fdata?._id)}
+                ></Buton>
+              </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={() => Closer()}>
+                Хаах
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        </div>
+        <div className="w-75 mt-5 d-flex  gap-5 text-light">
+          {allequations?.data?.map((el, i) => {
+            return (
+              <div
+                className="d-flex justify-content-center align-items-center fs-5"
+                style={{
+                  width: "225px",
+                  height: "100px",
+                  cursor: "pointer",
+                  boxShadow: "6px 8px 42px 1px rgba(0,0,0,0.15)",
+                  borderRadius: "5px",
+                  border: "solid rgb(243, 87, 60)",
+                }}
+                key={i}
+                onClick={() => edit(el?._id)}
               >
-                Launch demo modal
-              </Buton>
-            </div>
-          );
-        })}
+                {el?.Equation[0]}
+              </div>
+            );
+          })}
+        </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
