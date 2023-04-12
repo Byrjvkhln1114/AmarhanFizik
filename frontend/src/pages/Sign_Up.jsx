@@ -1,15 +1,44 @@
 import { Buton } from "../component/Buton";
 import { Header } from "../component/header";
 import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Sign_Up = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [repassword, setRepassword] = useState("");
+  const [err, setErr] = useState("");
+  const navigate = useNavigate();
+  setTimeout(() => {
+    setErr("");
+  }, "9000");
   const UserCreator = async () => {
-    const result = axios.post("localhost:8000/user", {
-      username: "sadas",
-      email: "bata@gmail.com",
-      password: "12345678",
-    });
+    if (username.length > 1 && username.length < 31) {
+      if (email.includes("@") == true) {
+        if (password.length > 4 && password.length < 61) {
+          if (password == repassword) {
+            const result = await axios.post("http://localhost:8000/user", {
+              username: username,
+              email: email,
+              password: password,
+            });
+            navigate("/login");
+          } else {
+            setErr("Password dont match");
+          }
+        } else {
+          setErr("Password should contain characters between 5-61");
+        }
+      } else {
+        setErr("Write correct email");
+      }
+    } else {
+      setErr("Username should contain characters between 2-30");
+    }
   };
+
   return (
     <div
       style={{ background: "#1f1f47", height: "100vh" }}
@@ -46,6 +75,7 @@ export const Sign_Up = () => {
                 borderRadius: "5px",
                 paddingLeft: "20px",
               }}
+              onChange={(e) => setUsername(e.target.value)}
               type="text"
               placeholder="Хэрэглэгчийн нэрээ бичнэ үү"
             />
@@ -61,6 +91,7 @@ export const Sign_Up = () => {
                 borderRadius: "5px",
                 paddingLeft: "20px",
               }}
+              onChange={(e) => setEmail(e.target.value)}
               type="email"
               placeholder="И-мэйлээ бичнэ үү"
             />
@@ -77,6 +108,7 @@ export const Sign_Up = () => {
                 borderRadius: "5px",
                 paddingLeft: "20px",
               }}
+              onChange={(e) => setPassword(e.target.value)}
               type="password"
               placeholder="Нууц үг бичнэ үү"
             />
@@ -92,12 +124,18 @@ export const Sign_Up = () => {
                 borderRadius: "5px",
                 paddingLeft: "20px",
               }}
+              onChange={(e) => setRepassword(e.target.value)}
               type="password"
               placeholder="Нууц үг давтна уу"
             />
           </div>
-
-          <Buton content={"Бүртгүүлэх"} width={"100%"} height={"5vh"}></Buton>
+          <div className="text-danger">{err}</div>
+          <Buton
+            onclicker={UserCreator}
+            content={"Бүртгүүлэх"}
+            width={"100%"}
+            height={"5vh"}
+          ></Buton>
         </div>
       </div>
     </div>

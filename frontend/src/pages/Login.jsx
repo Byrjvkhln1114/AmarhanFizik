@@ -1,8 +1,26 @@
 import { Buton } from "../component/Buton";
 import { Header } from "../component/header";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Login = () => {
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [err, setErr] = useState("");
+  const navigate = useNavigate();
+  const Login = async () => {
+    const result = await axios.post("http://localhost:8000/login", {
+      email: email,
+      password: password,
+    });
+
+    if (result.data == "success") {
+      navigate("/");
+    } else {
+      setErr(result.data);
+    }
+  };
   return (
     <div
       style={{ background: "#1f1f47", height: "100vh" }}
@@ -31,6 +49,7 @@ export const Login = () => {
           <div>
             <h5 style={{ fontWeight: "400" }}>И-мэйл</h5>
             <input
+              onChange={(e) => setEmail(e.target.value)}
               style={{
                 border: "1px solid black",
                 outline: "none",
@@ -46,6 +65,7 @@ export const Login = () => {
           <div>
             <h5 style={{ fontWeight: "400" }}>Нууц үг</h5>
             <input
+              onChange={(e) => setPassword(e.target.value)}
               style={{
                 border: "1px solid black",
                 outline: "none",
@@ -57,7 +77,10 @@ export const Login = () => {
               type="password"
               placeholder="Нууц үг бичнэ үү"
             />
-            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <div
+              className="mt-3"
+              style={{ display: "flex", justifyContent: "flex-end " }}
+            >
               <Link style={{ textDecoration: "none" }} to="/forgot">
                 <h5
                   style={{
@@ -70,9 +93,17 @@ export const Login = () => {
                 </h5>
               </Link>
             </div>
+            <span className="w-100 d-flex justify-content-center text-danger">
+              {err}
+            </span>
           </div>
 
-          <Buton content={"Нэвтрэх"} width={"100%"} height={"5vh"}></Buton>
+          <Buton
+            onclicker={Login}
+            content={"Нэвтрэх"}
+            width={"100%"}
+            height={"5vh"}
+          ></Buton>
 
           <h5
             style={{
