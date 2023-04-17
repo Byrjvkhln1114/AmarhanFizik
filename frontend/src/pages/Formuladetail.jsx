@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { Header, Buton, Footer } from "../component";
-import { MainContext } from "../context";
+import "./component.css";
 import axios from "axios";
 export const Formuladetail = () => {
   const [fdata, setFdata] = useState(null);
@@ -65,17 +65,17 @@ export const Formuladetail = () => {
             }}
             className="d-flex flex-column text-light w-25 fs-5 gap-3 p-4"
           >
-            <div>{fdata?.Equation[1]}</div>
-            <div
-              className="d-flex justify-content-between"
-              style={{ borderBottom: " 1px solid rgb(243, 87, 60)" }}
-            >
+            <div style={{ borderBottom: "1px solid rgb(243, 87, 60)" }}>
+              <div className="mb-3">{fdata?.Equation[1]}</div>
+            </div>
+            <div className="d-flex justify-content-between">
               {fdata?.Symbols.Detail[0]}
               <input
                 style={{
-                  width: "40px",
+                  width: "70%",
                   backgroundColor: "transparent",
                   outline: "none",
+                  textAlign: "end",
                 }}
                 onChange={(e) => setA(e.target.value)}
                 type="number"
@@ -84,7 +84,6 @@ export const Formuladetail = () => {
             </div>
             <div
               style={{
-                borderBottom: "1px solid rgb(243, 87, 60",
                 display: i0 == false ? "none" : "flex",
               }}
               className=" justify-content-between"
@@ -92,9 +91,10 @@ export const Formuladetail = () => {
               {fdata?.Symbols.Detail[1]}
               <input
                 style={{
-                  width: "40px",
+                  width: "70%",
                   backgroundColor: "transparent",
                   outline: "none",
+                  textAlign: "end",
                 }}
                 onChange={(e) => setB(e.target.value)}
                 type="number"
@@ -104,16 +104,16 @@ export const Formuladetail = () => {
             <div
               className=" justify-content-between"
               style={{
-                borderBottom: "1px solid rgb(243, 87, 60",
                 display: i1 == false ? "none" : "flex",
               }}
             >
               {fdata?.Symbols.Detail[2]}
               <input
                 style={{
-                  width: "40px",
+                  width: "70%",
                   backgroundColor: "transparent",
                   outline: "none",
+                  textAlign: "end",
                 }}
                 onChange={(e) => setC(e.target.value)}
                 type="number"
@@ -123,16 +123,16 @@ export const Formuladetail = () => {
             <div
               className=" justify-content-between"
               style={{
-                borderBottom: "1px solid rgb(243, 87, 60",
                 display: i2 == false ? "none" : "flex",
               }}
             >
               {fdata?.Symbols.Detail[3]}
               <input
                 style={{
-                  width: "40px",
+                  width: "70%",
                   backgroundColor: "transparent",
                   outline: "none",
+                  textAlign: "end",
                 }}
                 onChange={(e) => setD(e.target.value)}
                 type="number"
@@ -142,16 +142,16 @@ export const Formuladetail = () => {
             <div
               className=" justify-content-between"
               style={{
-                borderBottom: "1px solid rgb(243, 87, 60",
                 display: i3 == false ? "none" : "flex",
               }}
             >
               {fdata?.Symbols.Detail[4]}
               <input
                 style={{
-                  width: "40px",
+                  width: "70%",
                   backgroundColor: "transparent",
                   outline: "none",
+                  textAlign: "end",
                 }}
                 onChange={(e) => setD(e.target.value)}
                 type="number"
@@ -159,9 +159,16 @@ export const Formuladetail = () => {
               />
             </div>
 
-            {fdata?.Symbols.Detail[fdata?.Symbols.Detail.length - 1] +
-              "=" +
-              ans}
+            <div
+              style={{ borderTop: "1px solid rgb(243, 87, 60)" }}
+              className="w-100 d-flex justify-content-between "
+            >
+              <div className="mt-3">
+                {fdata?.Symbols.Detail[fdata?.Symbols.Detail.length - 1]} (
+                {fdata?.Symbols.letter[fdata?.Symbols.letter.length - 1]})
+              </div>
+              <div>{ans}</div>
+            </div>
             <Buton
               width={"120px"}
               height={"40px"}

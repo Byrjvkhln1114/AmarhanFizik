@@ -33,8 +33,13 @@ export const Header = () => {
 
           <div className="w-40vw" style={{ width: "55vw" }}>
             <div className="d-flex justify-content-end  gap-5">
-              {" "}
-              <div> Томьёо</div>
+              <Link
+                style={{ textDecoration: "none", color: "white" }}
+                to={"/formula"}
+              >
+                {" "}
+                <div> Томьёо</div>{" "}
+              </Link>
               <div>Хэлхээ</div>
               <div>Тайлбар толь</div>
             </div>
