@@ -1,5 +1,12 @@
 import { createContext } from "react";
+import { useState } from "react";
 export const MainContext = createContext();
 export const Context = ({ children }) => {
-  return <MainContext.Provider value={{}}>{children}</MainContext.Provider>;
+  const [fdata, setFdata] = useState(null);
+
+  return (
+    <MainContext.Provider value={{ fdata, setFdata }}>
+      {children}
+    </MainContext.Provider>
+  );
 };

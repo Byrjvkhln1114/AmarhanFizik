@@ -6,7 +6,7 @@ const Formulas = new mongoose.Schema({
   },
 
   Symbols: {
-    type: Array,
+    type: Object,
     required: true,
   },
   Equation_model: {
