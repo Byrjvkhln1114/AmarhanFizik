@@ -1,6 +1,6 @@
 const Formulas = require("../database/formulamodel");
 exports.FormulaCreator = async (req, res) => {
-  const { Equation, Symbols, Equation_model, Branches } = req.body;
+  const { Equation, Symbols, Equation_model } = req.body;
   await new Formulas({
     Equation: Equation,
     Symbols: Symbols,
@@ -23,7 +23,6 @@ exports.FindAllFormulas = async (req, res) => {
 };
 exports.FormulaCalculator = async (req, res) => {
   const { id, symbol } = req.body;
-  console.log(symbol);
   const a = symbol[0];
   const b = symbol[1];
   const c = symbol[2];

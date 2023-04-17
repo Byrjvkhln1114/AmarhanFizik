@@ -1,6 +1,7 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
-export const Drop = ({ content }) => {
+import { Buton } from "../component/Buton";
+export const Drop = () => {
   return (
     <Dropdown>
       <Dropdown.Toggle
@@ -13,20 +14,30 @@ export const Drop = ({ content }) => {
           borderRadius: "10px",
         }}
       >
-        Username
+        {localStorage.getItem("username")
+          ? localStorage.getItem("username")
+          : "Login"}
       </Dropdown.Toggle>
 
-      <Dropdown.Menu style={{ width: "200px" }}>
-        <Link style={{ textDecoration: "none" }} to="/formula">
-          <Dropdown.Item href="#/action-1">Томьёо</Dropdown.Item>
-        </Link>
-        <Link style={{ textDecoration: "none" }} to="/login">
-          <Dropdown.Item href="#/action-2">Нэвтрэх</Dropdown.Item>
-        </Link>
-        <Link style={{ textDecoration: "none" }} to="/signup">
-          <Dropdown.Item href="#/action-2">Бүртгүүлэх</Dropdown.Item>
-        </Link>
-      </Dropdown.Menu>
+      {localStorage.getItem("username") ? (
+        <Dropdown.Menu style={{ width: "200px" }}>
+          <Dropdown.Item
+            onClick={() => (localStorage.clear(), window.location.reload())}
+            href="#/action-2"
+          >
+            Logout
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      ) : (
+        <Dropdown.Menu style={{ width: "200px" }}>
+          <Link style={{ textDecoration: "none" }} to="/login">
+            <Dropdown.Item href="#/action-2">Нэвтрэх</Dropdown.Item>
+          </Link>
+          <Link style={{ textDecoration: "none" }} to="/signup">
+            <Dropdown.Item href="#/action-2">Бүртгүүлэх</Dropdown.Item>
+          </Link>
+        </Dropdown.Menu>
+      )}
     </Dropdown>
   );
 };
