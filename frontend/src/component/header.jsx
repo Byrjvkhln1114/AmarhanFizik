@@ -1,37 +1,18 @@
 import { Drop } from "./Dropdown";
 import { Link } from "react-router-dom";
-
+import "./styles.css"
 export const Header = () => {
   return (
-    <div
-      className="text-light"
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        height: "10%",
-        alignItems: "center",
-      }}
-    >
+    <div className="text-light header1">
       <div
-        className=""
-        style={{
-          width: "75vw",
-          backgroundColor: "",
-        }}
+        className="header2"
       >
-        <div
-          style={{
-            height: "7vh",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
+        <div className="header3">
           <Link to={"/"}>
-            <img style={{ height: "60px" }} src="Logo.png" alt="" />
+            <img className="header4" src="Logo.png" alt="" />
           </Link>
 
-          <div className="w-40vw" style={{ width: "55vw" }}>
+          <div className="w-40vw header5" >
             <div className="d-flex justify-content-end  gap-5">
               <Link
                 style={{ textDecoration: "none", color: "white" }}

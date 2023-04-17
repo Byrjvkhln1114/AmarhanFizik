@@ -1,0 +1,38 @@
+#button1{
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+}
+.dropdown1{
+    background-color: rgb(243, 87, 60) !important;
+    border: none!important;
+    height: 60px!important;
+    width: 200px!important;
+    border-radius: 10px!important;
+}
+.dropdown2{
+    width: 200px; 
+}
+.header1{
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    align-items: center;
+}
+.header2{
+    width: 75vw
+}
+.header3{
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header4{
+    height: 60px
+}
+.header5{
+    width: 55vw
+}

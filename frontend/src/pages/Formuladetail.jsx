@@ -52,31 +52,15 @@ export const Formuladetail = () => {
 
   return (
     <div>
-      <div
-        className="d-flex flex-column align-items-center "
-        style={{ background: "#1f1f47", height: "96vh" }}
-      >
+      <div className="d-flex flex-column align-items-center formulad1">
         <Header></Header>
         <div className=" text-light w-75">
-          <div
-            style={{
-              border: "1px solid rgb(243, 87, 60) ",
-              borderRadius: "5px",
-            }}
-            className="d-flex flex-column text-light w-25 fs-5 gap-3 p-4"
-          >
-            <div style={{ borderBottom: "1px solid rgb(243, 87, 60)" }}>
-              <div className="mb-3">{fdata?.Equation[1]}</div>
-            </div>
-            <div className="d-flex justify-content-between">
+          <div className="d-flex flex-column text-light w-25 fs-5 gap-3 p-4 fr formulad2">
+            <div>{fdata?.Equation[1]}</div>
+            <div className="d-flex justify-content-between formulad3">
               {fdata?.Symbols.Detail[0]}
               <input
-                style={{
-                  width: "70%",
-                  backgroundColor: "transparent",
-                  outline: "none",
-                  textAlign: "end",
-                }}
+                className="formulad4"
                 onChange={(e) => setA(e.target.value)}
                 type="number"
                 placeholder={fdata?.Symbols.letter[0]}
@@ -86,73 +70,53 @@ export const Formuladetail = () => {
               style={{
                 display: i0 == false ? "none" : "flex",
               }}
-              className=" justify-content-between"
+              className=" justify-content-between formulad5"
             >
               {fdata?.Symbols.Detail[1]}
               <input
-                style={{
-                  width: "70%",
-                  backgroundColor: "transparent",
-                  outline: "none",
-                  textAlign: "end",
-                }}
+                className="formulad6"
                 onChange={(e) => setB(e.target.value)}
                 type="number"
                 placeholder={fdata?.Symbols.letter[1]}
               />
             </div>
             <div
-              className=" justify-content-between"
+              className=" justify-content-between formulad7"
               style={{
                 display: i1 == false ? "none" : "flex",
               }}
             >
               {fdata?.Symbols.Detail[2]}
               <input
-                style={{
-                  width: "70%",
-                  backgroundColor: "transparent",
-                  outline: "none",
-                  textAlign: "end",
-                }}
+                className="formulad8"
                 onChange={(e) => setC(e.target.value)}
                 type="number"
                 placeholder={fdata?.Symbols.letter[2]}
               />
             </div>
             <div
-              className=" justify-content-between"
+              className=" justify-content-between formulad9"
               style={{
                 display: i2 == false ? "none" : "flex",
               }}
             >
               {fdata?.Symbols.Detail[3]}
               <input
-                style={{
-                  width: "70%",
-                  backgroundColor: "transparent",
-                  outline: "none",
-                  textAlign: "end",
-                }}
+                className="formulad10"
                 onChange={(e) => setD(e.target.value)}
                 type="number"
                 placeholder={fdata?.Symbols.letter[3]}
               />
             </div>
             <div
-              className=" justify-content-between"
+              className=" justify-content-between formulad11"
               style={{
                 display: i3 == false ? "none" : "flex",
               }}
             >
               {fdata?.Symbols.Detail[4]}
               <input
-                style={{
-                  width: "70%",
-                  backgroundColor: "transparent",
-                  outline: "none",
-                  textAlign: "end",
-                }}
+                className="formulad12"
                 onChange={(e) => setD(e.target.value)}
                 type="number"
                 placeholder={fdata?.Symbols.letter[4]}

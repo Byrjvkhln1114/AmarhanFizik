@@ -4,16 +4,7 @@ import { Buton } from "../component/Buton";
 export const Drop = () => {
   return (
     <Dropdown>
-      <Dropdown.Toggle
-        id="dropdown-basic"
-        style={{
-          backgroundColor: "rgb(243, 87, 60)",
-          border: "none",
-          height: "60px",
-          width: "200px",
-          borderRadius: "10px",
-        }}
-      >
+      <Dropdown.Toggle className="dropdown1" id="dropdown-basic">
         {localStorage.getItem("username")
           ? localStorage.getItem("username")
           : "Login"}
