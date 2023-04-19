@@ -32,9 +32,7 @@ export const Formula = () => {
     <div>
       <div className="d-flex flex-column align-items-center formula1">
         <Header></Header>
-        <div className="text-light">
-          <button>f</button>
-        </div>
+
         {loading == true ? (
           <div
             style={{ color: "rgb(243, 87, 60", height: "100vh" }}
