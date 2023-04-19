@@ -19,7 +19,7 @@ export const Login = () => {
         Email: Email,
         Password: Password,
       });
-      if (typeof result === "object") {
+      if (typeof result.data === "object") {
         localStorage.setItem("username", result.data.Username);
         navigate("/");
         window.location.reload();
@@ -61,6 +61,7 @@ export const Login = () => {
                 className="login3"
                 type="password"
                 placeholder="Нууц үг бичнэ үү"
+                onChange={(e) => setPassword(e.target.value)}
               />
               <div style={{ display: "flex", justifyContent: "flex-end" }}>
                 <Link style={{ textDecoration: "none" }} to="/forgot">
