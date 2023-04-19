@@ -131,6 +131,9 @@
     height: 45vh;
     border-radius: 30px;
 }
+.home6{
+    gap: 10vh;
+}
 .login1{
     height: 65vh;
     background: white;
@@ -205,4 +208,96 @@
     height: 5vh;
     border-radius: 5px;
     padding-left: 20px;
+}
+@media only screen and (max-width:375px){
+    .home5{
+        font-size: 20px;
+    }
+    .home6{
+        gap: 30px;
+    }
+    .home7{
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .home2{
+        width: 80vw;
+    }    
+    .home3{
+        width: 80vw;
+    }  
+    .home4{
+        width: 80vw;
+    }  
+    .home8{
+        height:100% !important
+    }
+}
+@media only screen and (min-width:376px) and (max-width:640px){    
+    .home5{
+        font-size: 30px;
+    }
+    .home6{
+        gap: 30px;
+    }
+    .home7{
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .home2{
+        width: 60vw;
+    }    
+    .home3{
+        width: 60vw;
+    }  
+    .home4{
+        width: 60vw;
+    }  
+    .home8{
+        height:100% !important
+    }
+}
+@media only screen and (max-width:768px) and (min-width:641px){
+    .home5{
+        font-size: 35px;
+    }
+    .home6{
+        gap: 30px;
+    }
+    .home7{
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .home1{
+        height: 30vh;
+    }
+    .home2{
+        width: 60vw;
+        height: 30vh;
+    }    
+    .home3{
+        width: 60vw;
+        height: 30vh;
+    }  
+    .home4{
+        width: 60vw;
+        height: 30vh;
+    }  
+    .home8{
+        height:100% !important
+    }
+}
+@media only screen and (max-width:1024px) and (min-width:769px){
+    home5{
+        font-size: 40px;
+    }
+    .home2-1{
+        font-size: 22px;
+    }    
+    .home3-1{
+        font-size: 22px;
+    }  
+    .home4-1{
+        font-size: 22px;
+    } 
 }
