@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { Header, Buton, Footer } from "../component";
 import { useNavigate } from "react-router-dom";
 import { MainContext } from "../context";
+import "./mystyles.css"
 import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -29,8 +30,7 @@ export const Formula = () => {
   return (
     <div>
       <div
-        className="d-flex flex-column align-items-center"
-        style={{ background: "#1f1f47", height: "96vh" }}
+        className="d-flex flex-column align-items-center formula1"
       >
         <Header></Header>
 
@@ -46,15 +46,7 @@ export const Formula = () => {
             {allequations?.data?.map((el, i) => {
               return (
                 <div
-                  className="d-flex justify-content-center align-items-center fs-5"
-                  style={{
-                    width: "225px",
-                    height: "100px",
-                    cursor: "pointer",
-                    boxShadow: "6px 8px 42px 1px rgba(0,0,0,0.15)",
-                    borderRadius: "5px",
-                    border: "solid rgb(243, 87, 60)",
-                  }}
+                  className="d-flex justify-content-center align-items-center fs-5 formula2"
                   key={i}
                   onClick={() => edit(el?._id)}
                 >

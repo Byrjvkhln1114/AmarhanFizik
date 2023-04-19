@@ -1,79 +1,55 @@
 import { useState } from "react";
 import { Header, Footer } from "../component";
 import { Link } from "react-router-dom";
+import "./mystyles.css"
 export const Home = () => {
   return (
-    <div>
+    <div className="">
       <div
-        className="w-100 d-flex flex-column align-items-center text-light  gap-5"
+        className="w-100 d-flex flex-column align-items-center text-light gap-5 home8"
         style={{ background: "#1f1f47", height: "96vh" }}
       >
         <Header></Header>
         <div
-          style={{ gap: "10vh" }}
-          className="w-100  d-flex flex-column align-items-center text-light "
+          className="w-100 d-flex flex-column align-items-center text-light home6"
         >
-          <h1 className="d-flex mt-5">
+          <h1 className="mt-5 home5">
             Физик бол асуудал
             <span className="ms-2 " style={{ color: "#f3573c" }}>
               БИШ !
             </span>
           </h1>
-          <div className="d-flex w-75 justify-content-between align-items-center ">
+          <div className="d-flex w-75 justify-content-between align-items-center home7">
             <Link
-              style={{
-                background: "#5381f9",
-                width: "30%",
-                height: "45vh",
-                borderRadius: "30px",
-                textDecoration: "none",
-              }}
-              className="d-flex flex-column align-items-center gap-5 justify-content-center text-light"
+              className="d-flex flex-column align-items-center gap-5 justify-content-center text-light home1"
               to={"formula"}
             >
               <div
-                className="d-flex flex-column align-items-center gap-5 justify-content-center"
-                style={{
-                  background: "#5381f9",
-                  width: "30%",
-                  borderRadius: "30px",
-                  height: "100%",
-                  width: "100%",
-                }}
+                className="d-flex flex-column align-items-center gap-5 justify-content-center home2"
               >
                 <img style={{ height: "60%" }} src="formula.png"></img>
-                <h2>Томьёо</h2>
+                <h2 className="home2-1">Томьёо</h2>
               </div>
             </Link>
 
             <div
-              className="d-flex flex-column align-items-center gap-5 justify-content-center"
-              style={{
-                background: "#e45a7e",
-                width: "30%",
-                height: "45vh",
-                borderRadius: "30px",
-              }}
+              className="d-flex flex-column align-items-center gap-5 justify-content-center home3"
             >
               <img style={{ height: "60%" }} src="definition.png"></img>
-              <h2>Тайлбар толь</h2>
+              <h2 className="home3-1">Тайлбар толь</h2>
             </div>
             <div
-              className="d-flex flex-column align-items-center gap-5 justify-content-center"
-              style={{
-                background: "#be29f8",
-                width: "30%",
-                height: "45vh",
-                borderRadius: "30px",
-              }}
+              className="d-flex flex-column align-items-center gap-5 justify-content-center home4"
             >
               <img style={{ height: "60%" }} src="circuit.png"></img>
-              <h2>Хэлхээ</h2>
+              <h2 className="home4-1">Хэлхээ</h2>
             </div>
           </div>
         </div>
       </div>
-      <Footer />
+      <div>
+        <Footer />
+    </div>
     </div>
   );
 };
