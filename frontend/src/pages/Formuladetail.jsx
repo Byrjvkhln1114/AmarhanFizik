@@ -131,7 +131,7 @@ export const Formuladetail = () => {
                 {fdata?.Symbols.Detail[fdata?.Symbols.Detail.length - 1]} (
                 {fdata?.Symbols.letter[fdata?.Symbols.letter.length - 1]})
               </div>
-              <div>{ans}</div>
+              <div className="mt-3">{ans}</div>
             </div>
             <Buton
               width={"120px"}
@@ -139,9 +139,7 @@ export const Formuladetail = () => {
               content={"Тооцоолох"}
               variant="primary"
               onclicker={() => Calculate(fdata?._id)}
-            >
-              ada
-            </Buton>
+            ></Buton>
           </div>
         </div>
         */

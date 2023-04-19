@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { MainContext } from "../context";
 import "./mystyles.css"
 import axios from "axios";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 export const Formula = () => {
   const [allequations, setAllequations] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,11 +12,14 @@ export const Formula = () => {
   const check = 0;
   useEffect(() => {
     (async () => {
-      const all = await axios.get("http://localhost:8000/allformula");
-      setAllequations(all);
-      setLoading(false);
+      formulagetter();
     })();
   }, [check]);
+  const formulagetter = async (filt) => {
+    const all = await axios.post("http://localhost:8000/allformula");
+    setAllequations(all);
+    setLoading(false);
+  };
   const edit = async (id) => {
     const result = await axios.post("http://localhost:8000/findformula", {
       _id: id,
@@ -33,7 +34,9 @@ export const Formula = () => {
         className="d-flex flex-column align-items-center formula1"
       >
         <Header></Header>
-
+        <div className="text-light">
+          <button onClick={formulagetter("f")}>f</button>
+        </div>
         {loading == true ? (
           <div
             style={{ color: "rgb(243, 87, 60", height: "100vh" }}

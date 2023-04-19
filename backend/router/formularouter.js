@@ -8,6 +8,6 @@ const {
 } = require("../controller/formulacontroller");
 FormulaRouter.post("/formula", FormulaCreator);
 FormulaRouter.post("/findformula", FindFormulaById);
-FormulaRouter.get("/allformula", FindAllFormulas);
+FormulaRouter.post("/allformula", FindAllFormulas);
 FormulaRouter.post("/calculate", FormulaCalculator);
 module.exports = FormulaRouter;
