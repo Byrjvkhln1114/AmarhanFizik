@@ -1,6 +1,6 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
-import { Buton } from "../component/Buton";
+import { buton } from "../component/buton";
 export const Drop = () => {
   return (
     <Dropdown>

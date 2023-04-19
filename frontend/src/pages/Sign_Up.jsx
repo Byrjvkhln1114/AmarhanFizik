@@ -1,4 +1,4 @@
-import { Buton } from "../component/Buton";
+import { Buton } from "../component/buton";
 import { Header, Footer } from "../component";
 import "./mystyles.css";
 export const Sign_Up = () => {
