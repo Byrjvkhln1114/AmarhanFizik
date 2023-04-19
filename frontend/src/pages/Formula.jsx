@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { Header, Buton, Footer } from "../component";
 import { useNavigate } from "react-router-dom";
 import { MainContext } from "../context";
-import "./mystyles.css"
+import "./mystyles.css";
 import axios from "axios";
 export const Formula = () => {
   const [allequations, setAllequations] = useState([]);
@@ -15,7 +15,7 @@ export const Formula = () => {
       formulagetter();
     })();
   }, [check]);
-  const formulagetter = async (filt) => {
+  const formulagetter = async () => {
     const all = await axios.post("http://localhost:8000/allformula");
     setAllequations(all);
     setLoading(false);
@@ -30,12 +30,10 @@ export const Formula = () => {
   };
   return (
     <div>
-      <div
-        className="d-flex flex-column align-items-center formula1"
-      >
+      <div className="d-flex flex-column align-items-center formula1">
         <Header></Header>
         <div className="text-light">
-          <button onClick={formulagetter("f")}>f</button>
+          <button>f</button>
         </div>
         {loading == true ? (
           <div

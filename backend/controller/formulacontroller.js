@@ -18,15 +18,8 @@ exports.FindFormulaById = async (req, res) => {
   }
 };
 exports.FindAllFormulas = async (req, res) => {
-  const { filt } = await req.body;
-
   const posts = await Formulas.find({});
-  posts.map((el) => {
-    const Datas = el.Symbols.letter.filter((el) => {
-      return el == filt;
-    });
-  });
-  res.send();
+  res.send(posts);
 };
 exports.FormulaCalculator = async (req, res) => {
   const { id, symbol } = req.body;
