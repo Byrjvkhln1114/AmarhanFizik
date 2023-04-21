@@ -13,7 +13,10 @@ export const Header = () => {
           <div className="w-40vw header5">
             <div className="d-flex justify-content-end header6">
               {" "}
-              <div> Томьёо</div>
+              <Link className="text-light text-decoration-none" to={"/formula"}>
+                {" "}
+                <div> Томьёо</div>{" "}
+              </Link>
               <div>Хэлхээ</div>
               <div>Тайлбар толь</div>
             </div>
