@@ -38,13 +38,12 @@ export const Login = () => {
       >
         <Header></Header>
         <div className="d-flex justify-content-center align-items-center flex-column login1">
-          <div className="w-75">
-            <p style={{ fontSize: "25px", fontWeight: "300" }}>Тавтай морил!</p>
+          <div className="login7">
+          <p style={{ fontSize: "25px", fontWeight: "300" }}>Тавтай морил!</p>
           </div>
           <p style={{ color: "#1F1F47", fontSize: "40px" }}>Нэвтрэх</p>
           <div
-            style={{ height: "45vh", width: "20vw" }}
-            className=" d-flex flex-column justify-content-around"
+            className=" d-flex flex-column justify-content-around login6"
           >
             <div>
               <h5 style={{ fontWeight: "400" }}>И-мэйл</h5>
@@ -65,7 +64,7 @@ export const Login = () => {
               />
               <div style={{ display: "flex", justifyContent: "flex-end" }}>
                 <Link style={{ textDecoration: "none" }} to="/forgot">
-                  <h5 className="login4">Нууц үг мартсан ?</h5>
+                  <h5 className="login4">Нууц үг мартсан?</h5>
                 </Link>
               </div>
             </div>

@@ -169,6 +169,13 @@
     font-size: 20px;
     color: #F3573C;
 }
+.login6{
+    height: 45vh;
+    width: 20vw;
+}
+.login7{
+    width: 75%;
+}
 .sign1{
     height: 65vh;
     background: white;
@@ -209,7 +216,103 @@
     border-radius: 5px;
     padding-left: 20px;
 }
+.sign7{
+    color: #1F1F47;
+    font-size:50px
+}
+.sign8{
+    margin-top: 2vh;
+}
 @media only screen and (max-width:375px){
+    .sign1{
+        height: 65vh;
+        background: white;
+        width: 80vw;
+        color: #1F1F47;
+        border-radius: 10px;
+        margin-top: 10vh;
+    }
+    .sign7{
+        font-size: 38px;
+    }
+    .sign2{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+        font-size: 12px;
+    }
+    .sign3{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .sign4{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .sign5{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .sign6{
+        width: 50vw;
+    }
+    .login1{
+        height: 65vh;
+        background: white;
+        width: 80vw;
+        color: #1F1F47;
+        border-radius: 10px;
+        margin-top: 10vh;
+    }
+    .login7{
+        width: 65%;
+    }
+    .login2{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .login3{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .login4{
+        justify-content: end;
+        color: #F3573C;
+        font-weight: 300;
+        font-size: 14px;
+    }
+    .login5{
+        display: flex;
+        font-size: 16px;
+        color: #F3573C;
+        flex-direction: column;
+    }
+    .login6{
+        width: 50vw;
+    }
     .home5{
         font-size: 20px;
     }
@@ -234,6 +337,95 @@
     }
 }
 @media only screen and (min-width:376px) and (max-width:640px){    
+    .sign1{
+        height: 65vh;
+        background: white;
+        width: 60vw;
+        color: #1F1F47;
+        border-radius: 10px;
+        margin-top: 10vh;
+    }
+    .sign7{
+        font-size: 38px;
+    }
+    .sign2{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+        font-size: 12px;
+    }
+    .sign3{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .sign4{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .sign5{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .sign6{
+        width: 50vw;
+    }
+    .login1{
+        height: 65vh;
+        background: white;
+        width: 60vw;
+        color: #1F1F47;
+        border-radius: 10px;
+        margin-top: 10vh;
+    }
+    .login7{
+        width: 85%;
+    }
+    .login2{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .login3{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .login4{
+        justify-content: end;
+        color: #F3573C;
+        font-weight: 300;
+        font-size: 14px;
+    }
+    .login5{
+        display: flex;
+        font-size: 24px;
+        color: #F3573C;
+        flex-direction: column;
+    }
+    .login6{
+        width: 50vw;
+    }
     .home5{
         font-size: 30px;
     }
@@ -258,6 +450,95 @@
     }
 }
 @media only screen and (max-width:768px) and (min-width:641px){
+    .sign1{
+        height: 65vh;
+        background: white;
+        width: 60vw;
+        color: #1F1F47;
+        border-radius: 10px;
+        margin-top: 10vh;
+    }
+    .sign7{
+        font-size: 38px;
+    }
+    .sign2{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+        font-size: 12px;
+    }
+    .sign3{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .sign4{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .sign5{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .sign6{
+        width: 50vw;
+    }
+    .login1{
+        height: 65vh;
+        background: white;
+        width: 60vw;
+        color: #1F1F47;
+        border-radius: 10px;
+        margin-top: 10vh;
+    }
+    .login7{
+        width: 85%;
+    }
+    .login2{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .login3{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .login4{
+        justify-content: end;
+        color: #F3573C;
+        font-weight: 300;
+        font-size: 18px;
+    }
+    .login5{
+        display: flex;
+        font-size: 24px;
+        color: #F3573C;
+        flex-direction: column;
+    }
+    .login6{
+        width: 50vw;
+    }
     .home5{
         font-size: 35px;
     }
@@ -288,7 +569,93 @@
     }
 }
 @media only screen and (max-width:1024px) and (min-width:769px){
-    home5{
+    .sign1{
+        height: 65vh;
+        background: white;
+        width: 40vw;
+        color: #1F1F47;
+        border-radius: 10px;
+        margin-top: 10vh;
+    }
+    .sign7{
+        font-size: 38px;
+    }
+    .sign2{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+        font-size: 12px;
+    }
+    .sign3{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .sign4{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .sign5{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .sign6{
+        width: 30vw;
+    }
+    .login1{
+        height: 65vh;
+        background: white;
+        width: 40vw;
+        color: #1F1F47;
+        border-radius: 10px;
+        margin-top: 10vh;
+    }
+    .login2{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .login3{
+        border: 1px solid black;
+        outline: none;
+        width: 100%;
+        height: 5vh;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    .login4{
+        justify-content: end;
+        color: #F3573C;
+        font-weight: 300;
+        font-size: 18px;
+    }
+    .login5{
+        display: flex;
+        font-size: 24px;
+        color: #F3573C;
+        flex-direction: column;
+    }
+    .login6{
+        width: 30vw;
+    }
+    .home5{
         font-size: 40px;
     }
     .home2-1{
