@@ -64,7 +64,7 @@ export const Formuladetail = () => {
         style={{ background: "#1f1f47", height: "96vh" }}
       >
         <Header></Header>
-        <div className=" text-light w-75">
+        <div className="d-flex  text-light w-75 gap-5">
           <div
             style={{
               border: "1px solid rgb(243, 87, 60) ",
@@ -185,16 +185,39 @@ export const Formuladetail = () => {
             ></Buton>
           </div>
           <div>
-            {quantity?.map((el) => {
-              return (
-                <div>
-                  {el.Symbol} ({el.Name}) {el.Meaning}
-                </div>
-              );
-            })}
+            <table
+              style={{
+                border: "1px solid rgb(243, 87, 60",
+                borderRadius: "10px",
+              }}
+            >
+              <tr
+                style={{
+                  border: "1px solid rgb(243, 87, 60",
+                  borderRadius: "10px",
+                }}
+              >
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Meaning</th>
+              </tr>
+              {quantity?.map((el) => {
+                return (
+                  <tr
+                    style={{
+                      border: "1px solid rgb(243, 87, 60",
+                      borderRadius: "10px",
+                    }}
+                  >
+                    <td>{el.Symbol}</td>
+                    <td>{el.Name}</td>
+                    <td>{el.Meaning}</td>
+                  </tr>
+                );
+              })}
+            </table>
           </div>
         </div>
-        */
       </div>
       <Footer></Footer>
     </div>
