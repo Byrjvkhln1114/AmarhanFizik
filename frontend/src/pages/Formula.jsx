@@ -1,13 +1,23 @@
 import { useEffect, useState, useContext } from "react";
-import { Header, Buton, Footer } from "../component";
+import { Header, Footer } from "../component";
 import { useNavigate } from "react-router-dom";
-import { MainContext } from "../context";
+
 import "./mystyles.css";
 import axios from "axios";
 export const Formula = () => {
   const [allequations, setAllequations] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { setFdata } = useContext(MainContext);
+  const [select, setSelect] = useState();
+  const [unselect, setunselect] = useState(false);
+  const symbol_datas = [
+    "Acceleration",
+    "Force",
+    "Velocity",
+    "Initial speed",
+    "Time",
+    "Final_speed",
+  ];
+  console.log(select);
   const Navigate = useNavigate("");
   const check = 0;
   useEffect(() => {
@@ -15,11 +25,19 @@ export const Formula = () => {
       formulagetter();
     })();
   }, [check]);
-  const formulagetter = async () => {
-    const all = await axios.post("http://localhost:8000/allformula");
+  const formulagetter = async (filt, i) => {
+    const all = await axios.post("http://localhost:8000/allformula", {
+      filt: filt,
+    });
     setAllequations(all);
     setLoading(false);
+    if (unselect == true) {
+      setSelect();
+      formulagetter();
+      window.location.reload();
+    }
   };
+
   const edit = async (id) => {
     const result = await axios.post("http://localhost:8000/findformula", {
       _id: id,
@@ -41,18 +59,40 @@ export const Formula = () => {
             <h1> Loading...</h1>
           </div>
         ) : (
-          <div className="w-75 mt-5 d-flex  gap-5 text-light">
-            {allequations?.data?.map((el, i) => {
-              return (
-                <div
-                  className="d-flex justify-content-center align-items-center fs-5 formula2"
-                  key={i}
-                  onClick={() => edit(el?._id)}
-                >
-                  {el?.Equation[0]}
-                </div>
-              );
-            })}
+          <div className="w-75 d-flex flex-column gap-2 mt-5">
+            <div className="d-flex text-light gap-3">
+              {symbol_datas.map((el, i) => {
+                return (
+                  <button
+                    id={i}
+                    style={{
+                      border: "1px solid rgb(243, 87, 60)",
+                      borderRadius: "5px",
+                      background: i == select ? "rgb(243, 87, 60)" : "",
+                    }}
+                    className="px-2 pt-1 pb-1"
+                    onClick={() => (
+                      formulagetter(el, i), setSelect(i), setunselect(!select)
+                    )}
+                  >
+                    {el}
+                  </button>
+                );
+              })}
+            </div>
+            <div className="w-100  mt-5 d-flex gap-5 text-light">
+              {allequations?.data?.map((el, i) => {
+                return (
+                  <div
+                    className="d-flex justify-content-center align-items-center fs-5 formula2"
+                    key={i}
+                    onClick={() => edit(el?._id)}
+                  >
+                    {el?.Equation[0]}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         )}
       </div>

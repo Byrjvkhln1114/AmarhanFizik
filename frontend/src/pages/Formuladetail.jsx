@@ -15,6 +15,7 @@ export const Formuladetail = () => {
   const [i2, setI2] = useState(false);
   const [i3, setI3] = useState(false);
   const [ans, setAns] = useState("");
+  const [quantity, setquantity] = useState(null);
   const check = 0;
   useEffect(() => {
     switch (
@@ -40,8 +41,14 @@ export const Formuladetail = () => {
         break;
     }
     setFdata(JSON.parse(localStorage.getItem("formula")));
+    quantityMeaning();
   }, [check]);
-
+  const quantityMeaning = async () => {
+    const a = await axios.post("http://localhost:8000/quantityfind", {
+      symbols: JSON.parse(localStorage.getItem("formula")).Symbols.letter,
+    });
+    setquantity(a.data);
+  };
   const Calculate = async (id) => {
     const result = await axios.post("http://localhost:8000/calculate", {
       id: id,
@@ -49,7 +56,7 @@ export const Formuladetail = () => {
     });
     setAns(result.data[0]);
   };
-
+  console.log(quantity);
   return (
     <div>
       <div
@@ -176,6 +183,15 @@ export const Formuladetail = () => {
               variant="primary"
               onclicker={() => Calculate(fdata?._id)}
             ></Buton>
+          </div>
+          <div>
+            {quantity?.map((el) => {
+              return (
+                <div>
+                  {el.Symbol} ({el.Name}) {el.Meaning}
+                </div>
+              );
+            })}
           </div>
         </div>
         */
