@@ -10,16 +10,15 @@ export const Sign_Up = () => {
       >
         <Header></Header>
         <div className="d-flex justify-content-center align-items-center flex-column sign1">
-          <div className="w-75">
+          <div className="login7">
             <p style={{ fontSize: "25px", fontWeight: "300" }}>Тавтай морил!</p>
           </div>
-          <p style={{ color: "#1F1F47", fontSize: "50px" }}>Бүртгүүлэх</p>
+          <p className="sign7">Бүртгүүлэх</p>
           <div
-            style={{ height: "45vh", width: "20vw" }}
-            className=" d-flex flex-column justify-content-around"
+            className=" d-flex flex-column justify-content-around sign6"
           >
             <div>
-              <h5 style={{ fontWeight: "400" }}>Хэрэглэгчийн нэр</h5>
+              <h5 style={{ fontWeight: "400" }} >Хэрэглэгчийн нэр</h5>
               <input
                 className="sign2"
                 type="text"
@@ -52,7 +51,7 @@ export const Sign_Up = () => {
               />
             </div>
 
-            <Buton content={"Бүртгүүлэх"} width={"100%"} height={"5vh"}></Buton>
+            <div className="sign8"><Buton content={"Бүртгүүлэх"} width={"100%"} height={"5vh"}></Buton></div>
           </div>
         </div>
       </div>
