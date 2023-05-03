@@ -13,6 +13,10 @@ const Formulas = new mongoose.Schema({
     type: String,
     required: true,
   },
+  Branches: {
+    default: "aaasda",
+    type: Array,
+  },
 });
 const FormulaModel = mongoose.model("Formulas", Formulas);
 module.exports = FormulaModel;

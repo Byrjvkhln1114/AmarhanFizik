@@ -56,7 +56,6 @@ export const Formuladetail = () => {
     });
     setAns(result.data[0]);
   };
-  console.log(quantity);
   return (
     <div>
       <div

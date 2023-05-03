@@ -1,12 +1,21 @@
 const Formulas = require("../database/formulamodel");
 exports.FormulaCreator = async (req, res) => {
-  const { Equation, Symbols, Equation_model } = req.body;
+  const { Equation, Symbols, Equation_model, Branches } = req.body;
   await new Formulas({
     Equation: Equation,
     Symbols: Symbols,
     Equation_model: Equation_model,
+    Branches: Branches,
   }).save();
   res.send("success");
+};
+exports.Alldelete = async (req, res) => {
+  try {
+    const a = await Formulas.deleteMany({});
+    res.send(a);
+  } catch (error) {
+    res.send(error.message);
+  }
 };
 exports.FindFormulaById = async (req, res) => {
   const { _id } = await req.body;
@@ -27,6 +36,14 @@ exports.FindAllFormulas = async (req, res) => {
   } else {
     res.send(posts);
   }
+};
+exports.FindmoreFormulas = async (req, res) => {
+  const { branches } = await req.body;
+  const allFormula = await Formulas.find({});
+  const datas = await branches?.map(
+    (ej) => allFormula?.filter((el) => el._id == ej)[0]
+  );
+  res.send(datas);
 };
 exports.FormulaCalculator = async (req, res) => {
   const { id, symbol } = req.body;

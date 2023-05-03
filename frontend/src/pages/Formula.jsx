@@ -9,6 +9,7 @@ export const Formula = () => {
   const [loading, setLoading] = useState(true);
   const [select, setSelect] = useState();
   const [unselect, setunselect] = useState(false);
+  const [more, setMore] = useState(null);
   const symbol_datas = [
     "Acceleration",
     "Force",
@@ -17,7 +18,6 @@ export const Formula = () => {
     "Time",
     "Final_speed",
   ];
-  console.log(select);
   const Navigate = useNavigate("");
   const check = 0;
   useEffect(() => {
@@ -37,12 +37,16 @@ export const Formula = () => {
       window.location.reload();
     }
   };
-
+  const moreFormulas = async (id) => {
+    const more = await axios.post("http://localhost:8000/findmoreformulas", {
+      branches: id,
+    });
+    setMore(more.data);
+  };
   const edit = async (id) => {
     const result = await axios.post("http://localhost:8000/findformula", {
       _id: id,
     });
-
     localStorage.setItem("formula", JSON.stringify(result?.data));
     Navigate("/formuladetail");
   };
@@ -82,15 +86,36 @@ export const Formula = () => {
             </div>
             <div className="w-100  mt-5 d-flex gap-5 text-light">
               {allequations?.data?.map((el, i) => {
-                return (
-                  <div
-                    className="d-flex justify-content-center align-items-center fs-5 formula2"
-                    key={i}
-                    onClick={() => edit(el?._id)}
-                  >
-                    {el?.Equation[0]}
-                  </div>
-                );
+                if (el.Branches[0] != "aaasda") {
+                  return (
+                    <div>
+                      <div
+                        className="d-flex justify-content-center align-items-center fs-5 formula2"
+                        key={i}
+                        onClick={() => edit(el?._id)}
+                      >
+                        {el?.Equation[0]}
+                      </div>
+                      <button
+                        onClick={() => moreFormulas(el.Branches)}
+                        className="ml-2"
+                      >
+                        ->
+                      </button>
+                      {more?.map((ej, l) => {
+                        return (
+                          <div
+                            className="d-flex justify-content-center align-items-center fs-5 formula2"
+                            key={l}
+                            onClick={() => edit(ej?._id)}
+                          >
+                            {ej?.Equation[0]}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                }
               })}
             </div>
           </div>
