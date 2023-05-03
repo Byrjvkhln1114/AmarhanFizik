@@ -100,7 +100,7 @@ export const Formula = () => {
                         onClick={() => moreFormulas(el.Branches)}
                         className="ml-2"
                       >
-                        ->
+                        -
                       </button>
                       {more?.map((ej, l) => {
                         return (
