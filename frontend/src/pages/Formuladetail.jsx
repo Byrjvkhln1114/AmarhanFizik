@@ -200,9 +200,10 @@ export const Formuladetail = () => {
                 <th>Name</th>
                 <th>Meaning</th>
               </tr>
-              {quantity?.map((el) => {
+              {quantity?.map((el, i) => {
                 return (
                   <tr
+                    key={i}
                     style={{
                       border: "1px solid rgb(243, 87, 60",
                       borderRadius: "10px",
