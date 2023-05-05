@@ -74,7 +74,7 @@ export const Formula = () => {
                       borderRadius: "5px",
                       background: i == select ? "rgb(243, 87, 60)" : "",
                     }}
-                    className="px-2 pt-1 pb-1"
+                    className="px-2 pt-1 pb-1 formula5"
                     onClick={() => (
                       formulagetter(el, i), setSelect(i), setunselect(!select)
                     )}
