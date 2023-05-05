@@ -11,6 +11,7 @@ export const Formula = () => {
   const [unselect, setunselect] = useState(false);
   const [more, setMore] = useState(null);
   const [arrow, setArrow] = useState(true);
+  const [id, setId] = useState(true);
 
   const symbol_datas = [
     "Acceleration",
@@ -101,10 +102,12 @@ export const Formula = () => {
                           {el?.Equation[0]}
                         </div>
                         <button
-                          onClick={() => moreFormulas(el.Branches)}
+                          onClick={() => (
+                            moreFormulas(el.Branches), setId(el?._id)
+                          )}
                           className="ml-2"
                         >
-                          {arrow == true ? "↓" : " ↑"}
+                          {arrow == false && id == el?._id ? " ↑" : "↓"}
                         </button>
                       </div>
                       <div className="d-flex flex-column gap-3">
@@ -112,7 +115,10 @@ export const Formula = () => {
                           return (
                             <div
                               style={{
-                                display: arrow == false ? "flex" : "none",
+                                display:
+                                  arrow == false && id == el?._id
+                                    ? "flex"
+                                    : "none",
                               }}
                               className=" justify-content-center align-items-center fs-5 formula2"
                               key={l}

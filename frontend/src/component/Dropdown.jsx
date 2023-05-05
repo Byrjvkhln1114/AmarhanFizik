@@ -18,6 +18,9 @@ export const Drop = () => {
           >
             Logout
           </Dropdown.Item>
+          <Link to="/formulainput">
+            <Dropdown.Item href="#/action-2">EnterFormula</Dropdown.Item>
+          </Link>
         </Dropdown.Menu>
       ) : (
         <Dropdown.Menu style={{ width: "200px" }}>
