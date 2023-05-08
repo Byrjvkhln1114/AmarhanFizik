@@ -9,9 +9,10 @@ const Quantities = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Meaning: {
+  Unit: {
     type: String,
     required: true,
+    default: "no unit",
   },
 });
 const QuantityModel = mongoose.model("Quantities", Quantities);

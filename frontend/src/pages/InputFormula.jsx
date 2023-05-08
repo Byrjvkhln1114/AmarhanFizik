@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header, Footer } from "../component";
+import { Header, Footer, Buton } from "../component";
 import axios from "axios";
 export const FormulaInput = () => {
   const [equation, setEquation] = useState("");
@@ -37,25 +37,25 @@ export const FormulaInput = () => {
           <div className="d-flex w-50 flex-column gap-5 ">
             <input
               className="bg-transparent"
-              placeholder="Formula&Detail"
+              placeholder="f=ma,force=mass*acceleration"
               onChange={(e) => setEquation(e.target.value)}
               type="text"
             />
             <input
               className="bg-transparent"
-              placeholder="a&f"
+              placeholder="m,a,f"
               onChange={(e) => setsyLetter(e.target.value)}
               type="text"
             />
             <input
               className="bg-transparent"
-              placeholder="acceleration&force"
+              placeholder="mass,acceleration,force"
               onChange={(e) => setsyDetail(e.target.value)}
               type="text"
             />
             <input
               className="bg-transparent"
-              placeholder="a/b"
+              placeholder="a*b"
               onChange={(e) => setModel(e.target.value)}
               type="text"
             />
@@ -67,7 +67,13 @@ export const FormulaInput = () => {
             />
           </div>
         </div>
-        <button onClick={result}>send</button>
+        <Buton
+          width={"120px"}
+          height={"40px"}
+          content={"Add"}
+          variant="primary"
+          onclicker={result}
+        ></Buton>
       </div>
       <Footer></Footer>
     </div>

@@ -183,39 +183,65 @@ export const Formuladetail = () => {
               onclicker={() => Calculate(fdata?._id)}
             ></Buton>
           </div>
-          <div>
-            <table
-              style={{
-                border: "1px solid rgb(243, 87, 60",
-                borderRadius: "10px",
-              }}
-            >
-              <tr
-                style={{
-                  border: "1px solid rgb(243, 87, 60",
-                  borderRadius: "10px",
-                }}
+          <div style={{ width: "20%" }} className="d-flex flex-column ">
+            <div className="d-flex w-100">
+              <div
+                style={{ width: "30%", border: "1px solid rgb(243, 87, 60" }}
+                className="d-flex justify-content-center "
               >
-                <th>Symbol</th>
-                <th>Name</th>
-                <th>Meaning</th>
-              </tr>
-              {quantity?.map((el, i) => {
-                return (
-                  <tr
-                    key={i}
+                Name
+              </div>
+
+              <div
+                style={{ width: "30%", border: "1px solid rgb(243, 87, 60" }}
+                className="d-flex justify-content-center
+               "
+              >
+                Symbol
+              </div>
+              <div
+                style={{ width: "30%", border: "1px solid rgb(243, 87, 60" }}
+                className="d-flex justify-content-center "
+              >
+                Unit
+              </div>
+            </div>
+
+            {quantity?.map((el, i) => {
+              return (
+                <div className="d-flex w-100" key={i}>
+                  <div
                     style={{
+                      width: "30%",
                       border: "1px solid rgb(243, 87, 60",
-                      borderRadius: "10px",
                     }}
+                    className="d-flex justify-content-center "
                   >
-                    <td>{el.Symbol}</td>
-                    <td>{el.Name}</td>
-                    <td>{el.Meaning}</td>
-                  </tr>
-                );
-              })}
-            </table>
+                    {el.Symbol}
+                  </div>
+
+                  <div
+                    style={{
+                      width: "30%",
+                      border: "1px solid rgb(243, 87, 60",
+                    }}
+                    className="d-flex justify-content-center "
+                  >
+                    {el.Name}
+                  </div>
+
+                  <div
+                    style={{
+                      width: "30%",
+                      border: "1px solid rgb(243, 87, 60",
+                    }}
+                    className="d-flex justify-content-center "
+                  >
+                    {el.Unit}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
