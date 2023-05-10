@@ -67,6 +67,7 @@ export const Formula = () => {
     const result = await axios.post("http://localhost:8000/findformula", {
       _id: id,
     });
+    localStorage.setItem("formula", JSON.stringify(result.data));
     Navigate("/formuladetail");
   };
   return (
