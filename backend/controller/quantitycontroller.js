@@ -18,7 +18,7 @@ exports.QuantityFinder = async (req, res) => {
   const { symbols } = await req.body;
   const datas = await Quantity.find({});
   const result = symbols.map((el) => {
-    const a = datas.filter((ej) => ej.Symbol == el);
+    const a = datas.filter((ej) => ej.Name == el);
     return a[0];
   });
   res.send(result);

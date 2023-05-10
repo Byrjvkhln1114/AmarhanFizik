@@ -12,7 +12,6 @@ export const FormulaInput = () => {
     const letter = syLetter.split(",");
     const detail = syDetail.split(",");
     const bra = Branches.split(",");
-
     const resultD = axios.post("http://localhost:8000/formula", {
       Equation: eq,
       Symbols: {

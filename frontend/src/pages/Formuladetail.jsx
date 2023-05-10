@@ -45,7 +45,7 @@ export const Formuladetail = () => {
   }, [check]);
   const quantityMeaning = async () => {
     const a = await axios.post("http://localhost:8000/quantityfind", {
-      symbols: JSON.parse(localStorage.getItem("formula")).Symbols.letter,
+      symbols: JSON.parse(localStorage.getItem("formula")).Symbols.Detail,
     });
     setquantity(a.data);
   };

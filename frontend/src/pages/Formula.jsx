@@ -14,12 +14,28 @@ export const Formula = () => {
   const [id, setId] = useState(true);
 
   const symbol_datas = [
-    "Acceleration",
-    "Force",
-    "Velocity",
-    "Initial speed",
-    "Time",
-    "Final_speed",
+    "Хүч",
+    "Хурд",
+    "Хурдатгал",
+    "Нягт",
+    "Чадал",
+    "Жин",
+    "Даралт",
+    "Кинетик энерги",
+    "Хүчдэл",
+    "Долгионы давтамж",
+    "Масс",
+    "Татах хүч",
+    "Зам",
+    "Хугацаа",
+    "Хугацаа",
+    "Анхны хурд",
+    "Эзлэхүүн",
+    "Ажил",
+    "Хугацаа",
+    "Гүйдэл",
+    "Эсэргүүцэл",
+    "Долгионы хурд",
   ];
   const Navigate = useNavigate("");
   const check = 0;
@@ -51,7 +67,6 @@ export const Formula = () => {
     const result = await axios.post("http://localhost:8000/findformula", {
       _id: id,
     });
-    localStorage.setItem("formula", JSON.stringify(result?.data));
     Navigate("/formuladetail");
   };
   return (
@@ -68,27 +83,44 @@ export const Formula = () => {
           </div>
         ) : (
           <div className="w-75 d-flex flex-column gap-2 mt-5">
-            <div className="d-flex text-light gap-3">
-              {symbol_datas.map((el, i) => {
-                return (
-                  <button
-                    id={i}
-                    style={{
-                      border: "1px solid rgb(243, 87, 60)",
-                      borderRadius: "5px",
-                      background: i == select ? "rgb(243, 87, 60)" : "",
-                    }}
-                    className="px-2 pt-1 pb-1 formula5"
-                    onClick={() => (
-                      formulagetter(el, i), setSelect(i), setunselect(!select)
-                    )}
-                  >
-                    {el}
-                  </button>
-                );
-              })}
+            <div className="d-flex">
+              <button
+                style={{
+                  border: "1px solid rgb(243, 87, 60)",
+                  borderRadius: "5px",
+                }}
+                className="px-2 pt-1 pb-1 formula5  mr-3 text-light"
+                onClick={() => window.location.reload()}
+              >
+                all
+              </button>
+              <div
+                style={{ overflow: "scroll" }}
+                className="d-flex text-light gap-3"
+              >
+                {symbol_datas.map((el, i) => {
+                  return (
+                    <button
+                      id={i}
+                      style={{
+                        border: "1px solid rgb(243, 87, 60)",
+                        borderRadius: "5px",
+                        background: i == select ? "rgb(243, 87, 60)" : "",
+                        width: "100px",
+                      }}
+                      className="px-2 pt-1 pb-1 formula5"
+                      onClick={() => (formulagetter(el, i), setSelect(i))}
+                    >
+                      {el}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-            <div className="w-100  mt-5 d-flex gap-5 text-light">
+            <div
+              style={{ display: "flex", flexWrap: "wrap" }}
+              className=" w-100 mt-5 d-flex gap-5 text-light "
+            >
               {allequations?.data?.map((el, i) => {
                 if (el.Branches[0] != "aaasda") {
                   return (

@@ -1,5 +1,9 @@
 const mongoose = require("mongoose");
 const Formulas = new mongoose.Schema({
+  Name: {
+    type: String,
+    required: true,
+  },
   Equation: {
     type: Array,
     required: true,

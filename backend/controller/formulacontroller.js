@@ -1,11 +1,12 @@
 const Formulas = require("../database/formulamodel");
 exports.FormulaCreator = async (req, res) => {
-  const { Equation, Symbols, Equation_model, Branches } = req.body;
+  const { Equation, Symbols, Equation_model, Branches, Name } = req.body;
   await new Formulas({
     Equation: Equation,
     Symbols: Symbols,
     Equation_model: Equation_model,
     Branches: Branches,
+    Name: Name,
   }).save();
   res.send("success");
 };
@@ -56,4 +57,19 @@ exports.FormulaCalculator = async (req, res) => {
   const formula = await Formulas.find({ _id: id });
   const ans = await eval(formula[0].Equation_model);
   res.send([ans]);
+};
+exports.FormulaNameUpdate = async (req, res) => {
+  try {
+    const allFormula = await Formulas.find({});
+    const model = await allFormula?.map(async (el) => {
+      // console.log(el?.Symbols.Detail.slice(-1));
+      await Formulas.findByIdAndUpdate(el._id, {
+        Name: el?.Symbols?.Detail?.slice(-1)[0],
+      });
+    });
+
+    res.send(model);
+  } catch (error) {
+    res.send(error.message);
+  }
 };
