@@ -1,4 +1,5 @@
 const Formulas = require("../database/formulamodel");
+const Users = require("../database/usermodel");
 exports.FormulaCreator = async (req, res) => {
   const { Equation, Symbols, Equation_model, Branches, Name } = req.body;
   await new Formulas({
@@ -60,15 +61,43 @@ exports.FormulaCalculator = async (req, res) => {
 };
 exports.FormulaNameUpdate = async (req, res) => {
   try {
-    const allFormula = await Formulas.find({});
-    const model = await allFormula?.map(async (el) => {
-      // console.log(el?.Symbols.Detail.slice(-1));
-      await Formulas.findByIdAndUpdate(el._id, {
-        Name: el?.Symbols?.Detail?.slice(-1)[0],
-      });
-    });
+    // const allFormula = await Formulas.find({});
+    // const model = await allFormula?.map(async (el) => {
+    //   // console.log(el?.Symbols.Detail.slice(-1));
+    //   await Formulas.findByIdAndUpdate(el._id, {
+    //     Name: el?.Symbols?.Detail?.slice(-1)[0],
+    //   });
+    // });
 
-    res.send(model);
+    // res.send(model);
+    const l = await Formulas.updateMany({}, { Likes: 0 });
+    res.send(l);
+  } catch (error) {
+    res.send(error.message);
+  }
+};
+exports.Formulaliker = async (req, res) => {
+  try {
+    const { _id, or, uid } = req.body;
+    console.log(_id);
+
+    const a = await Formulas.findById(_id);
+    const l = await Formulas.findByIdAndUpdate(_id, {
+      Likes: or == true ? a.Likes + 1 : a.Likes - 1,
+    });
+    const las = await Users.findById({ _id: uid });
+    if (las.LikedPosts.includes(_id)) {
+      await Users.findByIdAndUpdate(uid, { $pull: { LikedPosts: _id } });
+      res.send("removed");
+    } else {
+      await Users.findByIdAndUpdate(
+        uid,
+        { $push: { LikedPosts: _id } },
+        { new: true, upsert: true }
+      );
+      console.log(_id);
+      res.send("Liked");
+    }
   } catch (error) {
     res.send(error.message);
   }

@@ -21,6 +21,11 @@ const Formulas = new mongoose.Schema({
     default: "aaasda",
     type: Array,
   },
+  Likes: {
+    required: true,
+    type: Number,
+    default: 0,
+  },
 });
 const FormulaModel = mongoose.model("Formulas", Formulas);
 module.exports = FormulaModel;

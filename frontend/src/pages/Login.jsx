@@ -6,13 +6,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./mystyles.css";
 export const Login = () => {
-  setTimeout(() => {
-    setErr("");
-  }, 7000);
   const navigate = useNavigate();
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [err, setErr] = useState("");
+  setTimeout(() => {
+    setErr("");
+  }, 7000);
   const Login = async () => {
     if (Password != "" && Email != "") {
       const result = await axios.post("http://localhost:8000/login", {
@@ -20,7 +20,7 @@ export const Login = () => {
         Password: Password,
       });
       if (typeof result.data === "object") {
-        localStorage.setItem("username", result.data.Username);
+        localStorage.setItem("user", JSON.stringify(result.data));
         navigate("/");
         window.location.reload();
       } else {
@@ -39,12 +39,10 @@ export const Login = () => {
         <Header></Header>
         <div className="d-flex justify-content-center align-items-center flex-column login1">
           <div className="login7">
-          <p style={{ fontSize: "25px", fontWeight: "300" }}>Тавтай морил!</p>
+            <p style={{ fontSize: "25px", fontWeight: "300" }}>Тавтай морил!</p>
           </div>
           <p style={{ color: "#1F1F47", fontSize: "40px" }}>Нэвтрэх</p>
-          <div
-            className=" d-flex flex-column justify-content-around login6"
-          >
+          <div className=" d-flex flex-column justify-content-around login6">
             <div>
               <h5 style={{ fontWeight: "400" }}>И-мэйл</h5>
               <input

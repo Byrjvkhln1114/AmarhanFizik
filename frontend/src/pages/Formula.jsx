@@ -12,7 +12,10 @@ export const Formula = () => {
   const [more, setMore] = useState(null);
   const [arrow, setArrow] = useState(true);
   const [id, setId] = useState(true);
-
+  const [shaded, unShaded] = useState(false);
+  const [l, setl] = useState(false);
+  const [liked, setLiked] = useState([]);
+  const [likedimg, setLikedimg] = useState(false);
   const symbol_datas = [
     "Хүч",
     "Хурд",
@@ -28,15 +31,16 @@ export const Formula = () => {
     "Татах хүч",
     "Зам",
     "Хугацаа",
-    "Хугацаа",
+
     "Анхны хурд",
     "Эзлэхүүн",
     "Ажил",
-    "Хугацаа",
+
     "Гүйдэл",
     "Эсэргүүцэл",
     "Долгионы хурд",
   ];
+
   const Navigate = useNavigate("");
   const check = 0;
   useEffect(() => {
@@ -70,6 +74,28 @@ export const Formula = () => {
     localStorage.setItem("formula", JSON.stringify(result.data));
     Navigate("/formuladetail");
   };
+
+  const liker = async (_id, or) => {
+    const a = await axios.patch("http://localhost:8000/Formulaliker", {
+      _id: _id,
+      or: or,
+      uid: JSON.parse(localStorage.getItem("user"))._id,
+    });
+    alert(a.data);
+    await likedposts();
+    setLikedimg(!likedimg);
+  };
+
+  const likedposts = async () => {
+    const ahha = await axios.post("http://localhost:8000/Userfinder", {
+      uid: JSON.parse(localStorage.getItem("user"))._id,
+    });
+    setLiked(ahha?.data?.LikedPosts);
+  };
+  useEffect(() => {
+    likedposts();
+  }, []);
+
   return (
     <div>
       <div className="d-flex flex-column align-items-center formula1">
@@ -120,13 +146,16 @@ export const Formula = () => {
             </div>
             <div
               style={{ display: "flex", flexWrap: "wrap" }}
-              className=" w-100 mt-5 d-flex gap-5 text-light "
+              className=" w-100 mt-5 d-flex gap-5 text-light justify-content-center "
             >
               {allequations?.data?.map((el, i) => {
                 if (el.Branches[0] != "aaasda") {
                   return (
-                    <div className="d-flex flex-column gap-3">
-                      <div className="d-flex ">
+                    <div
+                      onClick={() => console.log(i)}
+                      className="d-flex flex-column gap-3 "
+                    >
+                      <div className="d-flex flex-column">
                         <div
                           className="d-flex justify-content-center align-items-center fs-5 formula2"
                           key={i}
@@ -134,30 +163,124 @@ export const Formula = () => {
                         >
                           {el?.Equation[0]}
                         </div>
-                        <button
-                          onClick={() => (
-                            moreFormulas(el.Branches), setId(el?._id)
+                        <div className="d-flex w-100 justify-content-around">
+                          <div className=" m-2">{el?.Likes} people saved</div>
+                          {liked.includes(el._id) ||
+                          (likedimg == true && el?._id == l) ? (
+                            <button
+                              id={i}
+                              onClick={() => (
+                                liker(
+                                  el?._id,
+                                  shaded == true ? false : true,
+                                  i
+                                ),
+                                setl(el?._id)
+                              )}
+                              style={{
+                                color: "rgb(243, 87, 60)",
+                              }}
+                              className="mt-2 px-2 pt-1 pb-1   mr-3 "
+                            >
+                              Saved
+                            </button>
+                          ) : (
+                            <button
+                              id={i}
+                              onClick={() => (
+                                liker(
+                                  el?._id,
+                                  shaded == true ? false : true,
+                                  i
+                                ),
+                                setl(el?._id)
+                              )}
+                              style={{
+                                backgroundColor: "rgb(243, 87, 60)",
+                                border: "1px solid rgb(243, 87, 60)",
+                                borderRadius: "4px",
+                              }}
+                              className="mt-2 px-2 pt-1 pb-1 liked  mr-3 text-light"
+                            >
+                              Save
+                            </button>
                           )}
-                          className="ml-2"
-                        >
-                          {arrow == false && id == el?._id ? " ↑" : "↓"}
-                        </button>
+
+                          <button
+                            className="d-flex ml-2 flex-column  justify-content-center align-items-center"
+                            onClick={() => (
+                              moreFormulas(el.Branches), setId(el?._id)
+                            )}
+                          >
+                            {arrow == false && id == el?._id ? " ↑" : "↓"}
+                          </button>
+                        </div>
                       </div>
                       <div className="d-flex flex-column gap-3">
                         {more?.map((ej, l) => {
                           return (
                             <div
+                              className="flex-column"
                               style={{
                                 display:
                                   arrow == false && id == el?._id
                                     ? "flex"
                                     : "none",
                               }}
-                              className=" justify-content-center align-items-center fs-5 formula2"
-                              key={l}
-                              onClick={() => edit(ej?._id)}
                             >
-                              {ej?.Equation[0]}
+                              <div
+                                className="d-flex justify-content-center align-items-center fs-5 formula2"
+                                key={l}
+                                onClick={() => edit(ej?._id)}
+                              >
+                                <div> {ej?.Equation[0]}</div>
+                              </div>
+                              <div className="d-flex w-100 justify-content-around">
+                                <div className=" m-2">
+                                  {ej?.Likes} people saved
+                                </div>
+                                {liked.includes(ej._id) ||
+                                (likedimg == true && ej?._id == l) ? (
+                                  <button
+                                    id={i}
+                                    onClick={() => (
+                                      liker(
+                                        ej?._id,
+                                        shaded == true ? false : true,
+                                        i
+                                      ),
+                                      setl(ej?._id)
+                                    )}
+                                    style={{
+                                      color: "rgb(243, 87, 60)",
+                                    }}
+                                    className="mt-2 px-2 pt-1 pb-1   mr-3 "
+                                  >
+                                    Saved
+                                  </button>
+                                ) : (
+                                  <button
+                                    id={i}
+                                    onClick={() => (
+                                      liker(
+                                        ej?._id,
+                                        shaded == true ? false : true,
+                                        i
+                                      ),
+                                      setl(ej?._id)
+                                    )}
+                                    style={{
+                                      backgroundColor: "rgb(243, 87, 60)",
+                                      border: "1px solid rgb(243, 87, 60)",
+                                      borderRadius: "4px",
+                                      width: "50px",
+                                    }}
+                                    className="mt-2 px-2 pt-1 pb-1 liked  mr-3 text-light"
+                                  >
+                                    Save
+                                  </button>
+                                )}
+                              </div>
                             </div>
                           );
                         })}

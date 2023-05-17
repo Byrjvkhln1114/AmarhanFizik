@@ -5,7 +5,8 @@ import { Context } from "./context";
 import { Login } from "./pages/Login";
 import { Sign_Up } from "./pages/Sign_Up";
 import { Forgot } from "./pages/Forgot";
-import { Formuladetail, FormulaInput } from "./pages";
+import { Formuladetail, FormulaInput, User } from "./pages";
+
 function App() {
   return (
     <Context>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/forgot" element={<Forgot />}></Route>
           <Route path="/formuladetail" element={<Formuladetail />}></Route>
           <Route path="/formulainput" element={<FormulaInput />}></Route>
+          <Route path="/User" element={<User />}></Route>
         </Routes>
       </BrowserRouter>
     </Context>

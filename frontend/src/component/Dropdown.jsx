@@ -5,12 +5,12 @@ export const Drop = () => {
   return (
     <Dropdown>
       <Dropdown.Toggle className="dropdown1" id="dropdown-basic">
-        {localStorage.getItem("username")
-          ? localStorage.getItem("username")
+        {localStorage.getItem("user")
+          ? JSON.parse(localStorage.getItem("user")).Username
           : "Login"}
       </Dropdown.Toggle>
 
-      {localStorage.getItem("username") ? (
+      {JSON.parse(localStorage.getItem("user")).Username ? (
         <Dropdown.Menu style={{ width: "200px" }}>
           <Dropdown.Item
             onClick={() => (localStorage.clear(), window.location.reload())}
@@ -20,6 +20,9 @@ export const Drop = () => {
           </Dropdown.Item>
           <Link to="/formulainput">
             <Dropdown.Item href="#/action-2">EnterFormula</Dropdown.Item>
+          </Link>
+          <Link to="/User">
+            <Dropdown.Item href="#/action-2">User Info</Dropdown.Item>
           </Link>
         </Dropdown.Menu>
       ) : (

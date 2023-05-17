@@ -29,3 +29,12 @@ exports.Userchecker = async (req, res) => {
     res.send(error.message);
   }
 };
+exports.Userfinder = async (req, res) => {
+  try {
+    const { uid } = req.body;
+    const result = await Users.findById(uid);
+    res.send(result);
+  } catch (error) {
+    res.send(error.message);
+  }
+};
