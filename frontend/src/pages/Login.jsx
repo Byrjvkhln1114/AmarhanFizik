@@ -75,7 +75,6 @@ export const Login = () => {
               width={"100%"}
               height={"5vh"}
             ></Buton>
-
             <h5 className="login5">
               <span style={{ color: "#7D7D7D" }}>Та бүртгэлтэй юу? ㅤ</span>
               <Link style={{ textDecoration: "none" }} to="/signup">

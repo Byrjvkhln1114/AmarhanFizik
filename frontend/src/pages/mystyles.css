@@ -247,37 +247,33 @@
     border: 1px solid black;
     outline: none;
     width: 100%;
-    height: 5vh;
-    border-radius: 5px;
-    padding-left: 20px;
-    font-size: 12px;
   }
-  .sign3 {
-    border: 1px solid black;
-    outline: none;
-    width: 100%;
-    height: 5vh;
-    border-radius: 5px;
-    padding-left: 20px;
+  .home2:hover {
+    transition: 0.4s ease-in;
+    background: #3d73fa;
   }
-  .sign4 {
-    border: 1px solid black;
-    outline: none;
-    width: 100%;
-    height: 5vh;
-    border-radius: 5px;
-    padding-left: 20px;
+  .home3:hover {
+    transition: 0.4s ease-in;
+    background: #c03a5e;
   }
-  .sign5 {
-    border: 1px solid black;
-    outline: none;
-    width: 100%;
-    height: 5vh;
-    border-radius: 5px;
-    padding-left: 20px;
+  .home4:hover {
+    transition: 0.4s ease-in;
+    background: #9524c2;
   }
-  .sign6 {
-    width: 50vw;
+  .home3 {
+    background: #e45a7e;
+    width: 30%;
+    height: 45vh;
+    border-radius: 30px;
+  }
+  .home4 {
+    background: #be29f8;
+    width: 30%;
+    height: 45vh;
+    border-radius: 30px;
+  }
+  .home6 {
+    gap: 10vh;
   }
   .login1 {
     height: 65vh;
@@ -678,4 +674,454 @@
 }
 .liked :hover {
   background-color: red;
+}
+.formula5:hover {
+  background-color: #f3573c;
+  transition: 0.6s;
+}
+@media only screen and (max-width: 375px) {
+  .sign1 {
+    height: 65vh;
+    background: white;
+    width: 80vw;
+    color: #1f1f47;
+    border-radius: 10px;
+    margin-top: 10vh;
+  }
+  .sign7 {
+    font-size: 38px;
+  }
+  .sign2 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+    font-size: 12px;
+  }
+  .sign3 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .sign4 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .sign5 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .sign6 {
+    width: 50vw;
+  }
+  .login1 {
+    height: 65vh;
+    background: white;
+    width: 80vw;
+    color: #1f1f47;
+    border-radius: 10px;
+    margin-top: 10vh;
+  }
+  .login7 {
+    width: 65%;
+  }
+  .login2 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .login3 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .login4 {
+    justify-content: end;
+    color: #f3573c;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  .login5 {
+    display: flex;
+    font-size: 16px;
+    color: #f3573c;
+    flex-direction: column;
+  }
+  .login6 {
+    width: 50vw;
+  }
+  .home5 {
+    font-size: 20px;
+  }
+  .home6 {
+    gap: 30px;
+  }
+  .home7 {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .home2 {
+    width: 80vw;
+  }
+  .home3 {
+    width: 80vw;
+  }
+  .home4 {
+    width: 80vw;
+  }
+  .home8 {
+    height: 100% !important;
+  }
+}
+@media only screen and (min-width: 376px) and (max-width: 640px) {
+  .sign1 {
+    height: 65vh;
+    background: white;
+    width: 60vw;
+    color: #1f1f47;
+    border-radius: 10px;
+    margin-top: 10vh;
+  }
+  .sign7 {
+    font-size: 38px;
+  }
+  .sign2 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+    font-size: 12px;
+  }
+  .sign3 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .sign4 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .sign5 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .sign6 {
+    width: 50vw;
+  }
+
+  .login1 {
+    height: 65vh;
+    background: white;
+    width: 60vw;
+    color: #1f1f47;
+    border-radius: 10px;
+    margin-top: 10vh;
+  }
+  .login7 {
+    width: 85%;
+  }
+  .login2 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .login3 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .login4 {
+    justify-content: end;
+    color: #f3573c;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  .login5 {
+    display: flex;
+    font-size: 24px;
+    color: #f3573c;
+    flex-direction: column;
+  }
+  .login6 {
+    width: 50vw;
+  }
+  .home5 {
+    font-size: 30px;
+  }
+  .home6 {
+    gap: 30px;
+  }
+  .home7 {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .home2 {
+    width: 60vw;
+  }
+  .home3 {
+    width: 60vw;
+  }
+  .home4 {
+    width: 60vw;
+  }
+  .home8 {
+    height: 100% !important;
+  }
+}
+@media only screen and (max-width: 768px) and (min-width: 641px) {
+  .sign1 {
+    height: 65vh;
+    background: white;
+    width: 60vw;
+    color: #1f1f47;
+    border-radius: 10px;
+    margin-top: 10vh;
+  }
+  .sign7 {
+    font-size: 38px;
+  }
+  .sign2 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+    font-size: 12px;
+  }
+  .sign3 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .sign4 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .sign5 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .sign6 {
+    width: 50vw;
+  }
+  .login1 {
+    height: 65vh;
+    background: white;
+    width: 60vw;
+    color: #1f1f47;
+    border-radius: 10px;
+    margin-top: 10vh;
+  }
+  .login7 {
+    width: 85%;
+  }
+  .login2 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .login3 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .login4 {
+    justify-content: end;
+    color: #f3573c;
+    font-weight: 300;
+    font-size: 18px;
+  }
+  .login5 {
+    display: flex;
+    font-size: 24px;
+    color: #f3573c;
+    flex-direction: column;
+  }
+  .login6 {
+    width: 50vw;
+  }
+  .home5 {
+    font-size: 35px;
+  }
+  .home6 {
+    gap: 30px;
+  }
+  .home7 {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .home1 {
+    height: 30vh;
+  }
+  .home2 {
+    width: 60vw;
+    height: 30vh;
+  }
+  .home3 {
+    width: 60vw;
+    height: 30vh;
+  }
+  .home4 {
+    width: 60vw;
+    height: 30vh;
+  }
+  .home8 {
+    height: 100% !important;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+  .sign1 {
+    height: 65vh;
+    background: white;
+    width: 40vw;
+    color: #1f1f47;
+    border-radius: 10px;
+    margin-top: 10vh;
+  }
+  .sign7 {
+    font-size: 38px;
+  }
+  .sign2 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+    font-size: 12px;
+  }
+  .sign3 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .sign4 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .sign5 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .sign6 {
+    width: 30vw;
+  }
+  .login1 {
+    height: 65vh;
+    background: white;
+    width: 40vw;
+    color: #1f1f47;
+    border-radius: 10px;
+    margin-top: 10vh;
+  }
+  .login2 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .login3 {
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    height: 5vh;
+    border-radius: 5px;
+    padding-left: 20px;
+  }
+  .login4 {
+    justify-content: end;
+    color: #f3573c;
+    font-weight: 300;
+    font-size: 18px;
+  }
+  .login5 {
+    display: flex;
+    font-size: 24px;
+    color: #f3573c;
+    flex-direction: column;
+  }
+  .login6 {
+    width: 30vw;
+  }
+  .home5 {
+    font-size: 40px;
+  }
+  .home2-1 {
+    font-size: 22px;
+  }
+  .home3-1 {
+    font-size: 22px;
+  }
+  .home4-1 {
+    font-size: 22px;
+  }
 }
