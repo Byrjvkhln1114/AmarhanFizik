@@ -58,6 +58,7 @@
   box-shadow: 6px 8px 42px 1px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   border: solid rgb(243, 87, 60);
+  transition: 0.6s;
 }
 .formulad1 {
   background: #1f1f47;
@@ -65,6 +66,7 @@
 }
 .formulad2 {
   border: 1px solid rgb(243, 87, 60);
+  transition: 0.6s;
   border-radius: 5px;
 }
 .formulad3 {
@@ -241,11 +243,12 @@
 }
 .formula2:hover {
   background-color: #f3573c;
+}
+.formula5{
   transition: 0.6s;
 }
 .formula5:hover {
   background-color: #f3573c;
-  transition: 0.6s;
 }
 @keyframes bounce {
   70% {
