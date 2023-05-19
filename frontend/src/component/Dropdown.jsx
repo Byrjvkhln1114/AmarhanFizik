@@ -9,8 +9,7 @@ export const Drop = () => {
           ? JSON.parse(localStorage.getItem("user")).Username
           : "Login"}
       </Dropdown.Toggle>
-
-      {JSON.parse(localStorage.getItem("user")).Username ? (
+      {JSON.parse(localStorage.getItem("user")) ? (
         <Dropdown.Menu style={{ width: "200px" }}>
           <Dropdown.Item
             onClick={() => (localStorage.clear(), window.location.reload())}
