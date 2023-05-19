@@ -5,13 +5,20 @@
     font-weight: 700;
     font-size: 18px;
 }
-
+#button1:hover{
+    background-color: rgb(196, 66, 43);
+    transition:ease-in 0.4s ;
+}
 .dropdown1{
     background-color: rgb(243, 87, 60) !important;
     border: none!important;
     height: 60px!important;
     width: 200px!important;
     border-radius: 10px!important;
+}
+.dropdown1:hover{
+    background-color: rgb(196, 66, 43) !important;
+    transition:ease-in 0.4s ;
 }
 .dropdown2{
     width: 200px; 

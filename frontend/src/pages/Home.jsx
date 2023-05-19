@@ -31,19 +31,27 @@ export const Home = () => {
                 <h2 className="home2-1">Томьёо</h2>
               </div>
             </Link>
-
-            <div
-              className="d-flex flex-column align-items-center gap-5 justify-content-center home3"
-            >
-              <img style={{ height: "60%" }} src="definition.png"></img>
-              <h2 className="home3-1">Тайлбар толь</h2>
-            </div>
+            <Link
+              className="d-flex flex-column align-items-center gap-5 justify-content-center text-light home13"
+              to={"definition"}
+              >
+              <div
+                className="d-flex flex-column align-items-center gap-5 justify-content-center home3"
+              >
+                <img style={{ height: "60%" }} src="definition.png"></img>
+                <h2 className="home3-1">Тайлбар толь</h2>
+              </div>
+            </Link>
+            <Link
+              className="d-flex flex-column align-items-center gap-5 justify-content-center text-light home14"
+              to={"formula"}>
             <div
               className="d-flex flex-column align-items-center gap-5 justify-content-center home4"
             >
               <img style={{ height: "60%" }} src="circuit.png"></img>
               <h2 className="home4-1">Хэлхээ</h2>
             </div>
+                        </Link>
           </div>
         </div>
       </div>
