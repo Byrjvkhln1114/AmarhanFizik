@@ -1,18 +1,35 @@
 import { Header, Footer } from "../component";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 export const User = () => {
   const [liked, setLiked] = useState([]);
+  const Navigate = useNavigate("");
   const likedposts = async () => {
-    const ahha = await axios.post("http://localhost:8000/Userfinder", {
-      uid: JSON.parse(localStorage.getItem("user"))._id,
+    const a = JSON.parse(localStorage.getItem("user"))._id;
+
+    const data = await axios.post(
+      `http://localhost:8000/Userfinder/6461f6eeee11336fce35673d`
+    );
+    const result = await axios.post(
+      "http://localhost:8000/FindLikedFormulasById",
+      {
+        ids: data?.data?.LikedPosts,
+      }
+    );
+    setLiked(result?.data);
+  };
+  const edit = async (id) => {
+    const result = await axios.post("http://localhost:8000/findformula", {
+      _id: id,
     });
-    setLiked(ahha?.data?.LikedPosts);
+    localStorage.setItem("formula", JSON.stringify(result.data));
+    Navigate("/formuladetail");
   };
   useEffect(() => {
     likedposts();
   }, []);
-
   return (
     <div>
       <div
@@ -21,13 +38,23 @@ export const User = () => {
       >
         <Header></Header>
         <h1>Hello {JSON.parse(localStorage.getItem("user")).Username}</h1>
-        <div>
+        <div
+          className="d-flex gap-2 flex-column w-75"
+          style={{ border: "1px solid black" }}
+        >
           <h2>Saved posts:</h2>
-          <div>
-            {liked.map((el) => {
-              return <div></div>;
+          <div className="d-flex gap-5 ">
+            {liked.map((el, i) => {
+              return (
+                <div
+                  className="d-flex justify-content-center align-items-center fs-5 formula2"
+                  key={i}
+                  onClick={() => edit(el?._id)}
+                >
+                  {el?.Equation[0]}
+                </div>
+              );
             })}
-            {/* <button onClick={findFormula}>ada</button> */}
           </div>
         </div>
       </div>

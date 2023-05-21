@@ -1,7 +1,8 @@
 import { useEffect, useState, useContext } from "react";
 import { Header, Footer } from "../component";
 import { useNavigate } from "react-router-dom";
-
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import "./mystyles.css";
 import axios from "axios";
 export const Formula = () => {
@@ -16,6 +17,10 @@ export const Formula = () => {
   const [l, setl] = useState(false);
   const [liked, setLiked] = useState([]);
   const [likedimg, setLikedimg] = useState(false);
+  const [show, setShow] = useState(false);
+  const [likemsg, setlikemsg] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const symbol_datas = [
     "Хүч",
     "Хурд",
@@ -75,20 +80,23 @@ export const Formula = () => {
   };
 
   const liker = async (_id, or) => {
+    await likedposts();
     const a = await axios.patch("http://localhost:8000/Formulaliker", {
       _id: _id,
-      or: or,
+      or: liked.includes(_id) ? false : true,
       uid: JSON.parse(localStorage.getItem("user"))._id,
     });
-    alert(a.data);
+    await unShaded(!shaded);
+    await setlikemsg(a?.data);
+    await handleShow();
     await likedposts();
-    setLikedimg(!likedimg);
+    await setLikedimg(!likedimg);
+    await formulagetter();
   };
 
   const likedposts = async () => {
-    const ahha = await axios.post("http://localhost:8000/Userfinder", {
-      uid: JSON.parse(localStorage.getItem("user"))._id,
-    });
+    const a = await JSON.parse(localStorage.getItem("user"))._id;
+    const ahha = await axios.post(`http://localhost:8000/Userfinder/${a}`);
     setLiked(ahha?.data?.LikedPosts);
   };
   useEffect(() => {
@@ -97,12 +105,36 @@ export const Formula = () => {
 
   return (
     <div>
-      <div className="d-flex flex-column align-items-center formula1">
+      <div
+        style={{ width: "100vw", minHeight: "96vh" }}
+        className="d-flex flex-column align-items-center formula1 "
+      >
         <Header></Header>
-
+        <Modal className="w-100" show={show} onHide={handleClose}>
+          <div
+            style={{
+              backgroundColor: "#1f1f47",
+              borderRadius: "7px",
+              border: "4px solid #f3573c",
+            }}
+            className="text-light"
+          >
+            <Modal.Body>
+              <h5>{likemsg}</h5>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button
+                style={{ background: "#f3573c", border: "none" }}
+                onClick={() => handleClose()}
+              >
+                Ok
+              </Button>
+            </Modal.Footer>
+          </div>
+        </Modal>
         {loading == true ? (
           <div
-            style={{ color: "rgb(243, 87, 60", height: "100vh" }}
+            style={{ color: "rgb(243, 87, 60" }}
             className="w-100 d-flex justify-content-center align-items-center"
           >
             <h1> Loading...</h1>
@@ -132,6 +164,7 @@ export const Formula = () => {
                         border: "1px solid rgb(243, 87, 60)",
                         borderRadius: "5px",
                         background: i == select ? "rgb(243, 87, 60)" : "",
+
                         width: "100px",
                       }}
                       className="px-2 pt-1 pb-1 formula5"
@@ -150,10 +183,7 @@ export const Formula = () => {
               {allequations?.data?.map((el, i) => {
                 if (el.Branches[0] != "aaasda") {
                   return (
-                    <div
-                      onClick={() => console.log(i)}
-                      className="d-flex flex-column gap-3 "
-                    >
+                    <div className="d-flex flex-column gap-3 ">
                       <div className="d-flex flex-column">
                         <div
                           className="d-flex justify-content-center align-items-center fs-5 formula2"
@@ -169,12 +199,7 @@ export const Formula = () => {
                             <button
                               id={i}
                               onClick={() => (
-                                liker(
-                                  el?._id,
-                                  shaded == true ? false : true,
-                                  i
-                                ),
-                                setl(el?._id)
+                                liker(el?._id, false, i), setl(el?._id)
                               )}
                               style={{
                                 color: "rgb(243, 87, 60)",

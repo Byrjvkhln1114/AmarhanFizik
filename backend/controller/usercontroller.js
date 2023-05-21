@@ -19,7 +19,7 @@ exports.Userchecker = async (req, res) => {
     const user = await Users.findOne({
       Email: Email,
     });
-    console.log(user);
+
     if (user) {
       user.Password == Password ? res.send(user) : res.send("Wrong password");
     } else {
@@ -31,8 +31,10 @@ exports.Userchecker = async (req, res) => {
 };
 exports.Userfinder = async (req, res) => {
   try {
-    const { uid } = req.body;
+    const { uid } = req.params;
+
     const result = await Users.findById(uid);
+    console.log(result);
     res.send(result);
   } catch (error) {
     res.send(error.message);

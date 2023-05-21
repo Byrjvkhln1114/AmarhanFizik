@@ -9,6 +9,7 @@ const {
   FindmoreFormulas,
   FormulaNameUpdate,
   Formulaliker,
+  FindLikedFormulasById,
 } = require("../controller/formulacontroller");
 FormulaRouter.post("/formula", FormulaCreator);
 FormulaRouter.post("/findformula", FindFormulaById);
@@ -18,4 +19,5 @@ FormulaRouter.delete("/formuladelete", Alldelete);
 FormulaRouter.post("/calculate", FormulaCalculator);
 FormulaRouter.patch("/Formulanameupdate", FormulaNameUpdate);
 FormulaRouter.patch("/Formulaliker", Formulaliker);
+FormulaRouter.post("/FindLikedFormulasById", FindLikedFormulasById);
 module.exports = FormulaRouter;

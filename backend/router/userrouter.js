@@ -7,5 +7,5 @@ const {
 } = require("../controller/usercontroller");
 Userrouter.post("/signup", Usercreator);
 Userrouter.post("/login", Userchecker);
-Userrouter.post("/Userfinder", Userfinder);
+Userrouter.post("/Userfinder/:uid", Userfinder);
 module.exports = Userrouter;

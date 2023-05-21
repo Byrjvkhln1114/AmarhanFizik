@@ -28,6 +28,14 @@ exports.FindFormulaById = async (req, res) => {
     res.send(posts[0]);
   }
 };
+exports.FindLikedFormulasById = async (req, res) => {
+  const { ids } = await req.body;
+  const all = await Formulas.find({});
+  const result = await ids.map((el) => {
+    return all.filter((ed) => ed._id == el)[0];
+  });
+  res.send(result);
+};
 exports.FindAllFormulas = async (req, res) => {
   const { filt } = req.body;
 
@@ -61,15 +69,6 @@ exports.FormulaCalculator = async (req, res) => {
 };
 exports.FormulaNameUpdate = async (req, res) => {
   try {
-    // const allFormula = await Formulas.find({});
-    // const model = await allFormula?.map(async (el) => {
-    //   // console.log(el?.Symbols.Detail.slice(-1));
-    //   await Formulas.findByIdAndUpdate(el._id, {
-    //     Name: el?.Symbols?.Detail?.slice(-1)[0],
-    //   });
-    // });
-
-    // res.send(model);
     const l = await Formulas.updateMany({}, { Likes: 0 });
     res.send(l);
   } catch (error) {
@@ -79,7 +78,6 @@ exports.FormulaNameUpdate = async (req, res) => {
 exports.Formulaliker = async (req, res) => {
   try {
     const { _id, or, uid } = req.body;
-    console.log(_id);
 
     const a = await Formulas.findById(_id);
     const l = await Formulas.findByIdAndUpdate(_id, {
@@ -95,7 +93,7 @@ exports.Formulaliker = async (req, res) => {
         { $push: { LikedPosts: _id } },
         { new: true, upsert: true }
       );
-      console.log(_id);
+
       res.send("Liked");
     }
   } catch (error) {
