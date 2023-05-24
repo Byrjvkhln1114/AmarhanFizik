@@ -10,8 +10,10 @@ const {
   FormulaNameUpdate,
   Formulaliker,
   FindLikedFormulasById,
+  Home,
 } = require("../controller/formulacontroller");
 FormulaRouter.post("/formula", FormulaCreator);
+FormulaRouter.get("/home", Home);
 FormulaRouter.post("/findformula", FindFormulaById);
 FormulaRouter.post("/findmoreformulas", FindmoreFormulas);
 FormulaRouter.post("/allformula", FindAllFormulas);

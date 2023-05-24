@@ -100,3 +100,6 @@ exports.Formulaliker = async (req, res) => {
     res.send(error.message);
   }
 };
+exports.Home = async (req, res) => {
+  res.send("Hello");
+};

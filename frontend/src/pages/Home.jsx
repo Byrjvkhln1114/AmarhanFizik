@@ -17,7 +17,7 @@ export const Home = () => {
     <div className="">
       <div
         className=" d-flex flex-column align-items-center text-light gap-5 home8"
-        style={{ background: "#1f1f47", height: "96vh", width: "100%" }}
+        style={{ background: "#1f1f47", height: "96vh", width: "100vw" }}
       >
         <Header></Header>
 
@@ -74,23 +74,22 @@ export const Home = () => {
                 <h2 className="home2-1">Томьёо</h2>
               </div>
             </div>
-
             <Link
               className="d-flex flex-column align-items-center gap-5 justify-content-center text-light home13"
               to={"definition"}
             >
               <div className="d-flex flex-column align-items-center gap-5 justify-content-center home3">
-                <img style={{ height: "60%" }} src="definition.png"></img>
-                <h2 className="home3-1">Тайлбар толь</h2>
+                <img style={{ height: "60%" }} src="Definition.png"></img>
+                <h2 className="home3-1">Definition </h2>
               </div>
             </Link>
             <Link
               className="d-flex flex-column align-items-center gap-5 justify-content-center text-light home14"
-              to={"formula"}
+              to={"/Aboutus"}
             >
               <div className="d-flex flex-column align-items-center gap-5 justify-content-center home4">
-                <img style={{ height: "60%" }} src="circuit.png"></img>
-                <h2 className="home4-1">Хэлхээ</h2>
+                <img style={{ height: "60%" }} src="team.png"></img>
+                <h2 className="home4-1">About us</h2>
               </div>
             </Link>
           </div>
