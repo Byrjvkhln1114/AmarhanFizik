@@ -5,7 +5,8 @@ import { Context } from "./context";
 import { Login } from "./pages/Login";
 import { Sign_Up } from "./pages/Sign_Up";
 import { Forgot } from "./pages/Forgot";
-import { Formuladetail, FormulaInput, User } from "./pages";
+import { About } from "./pages/About";
+import { Formuladetail, FormulaInput, User, Definition } from "./pages";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="/formuladetail" element={<Formuladetail />}></Route>
           <Route path="/formulainput" element={<FormulaInput />}></Route>
           <Route path="/User" element={<User />}></Route>
+          <Route path="/aboutus" element={<About />}></Route>
+          <Route path="/definition" element={<Definition />}></Route>
         </Routes>
       </BrowserRouter>
     </Context>
