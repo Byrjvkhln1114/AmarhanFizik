@@ -38,10 +38,7 @@ export const User = () => {
       >
         <Header></Header>
         <h1>Hello {JSON.parse(localStorage.getItem("user")).Username}</h1>
-        <div
-          className="d-flex gap-2 flex-column w-75"
-          style={{ border: "1px solid black" }}
-        >
+        <div className="d-flex gap-2 flex-column w-75">
           <h2>Saved posts:</h2>
           <div className="d-flex gap-5 ">
             {liked.map((el, i) => {
