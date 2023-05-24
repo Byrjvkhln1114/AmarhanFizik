@@ -19,8 +19,10 @@ export const Formula = () => {
   const [likedimg, setLikedimg] = useState(false);
   const [show, setShow] = useState(false);
   const [likemsg, setlikemsg] = useState(false);
+  const [car, setCar] = useState(0);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   const symbol_datas = [
     "Хүч",
     "Хурд",
@@ -102,12 +104,21 @@ export const Formula = () => {
   useEffect(() => {
     likedposts();
   }, []);
+  const Carousel = async (check) => {
+    if (check) {
+      if (car != 0) {
+        setCar(car + 30);
+      }
+    } else {
+      setCar(car - 30);
+    }
+  };
 
-  return (
+  return localStorage.getItem("user") ? (
     <div>
       <div
         style={{ width: "100vw", minHeight: "96vh" }}
-        className="d-flex flex-column align-items-center formula1 "
+        className="d-flex flex-column align-items-center formula1 pt-2"
       >
         <Header></Header>
         <Modal className="w-100" show={show} onHide={handleClose}>
@@ -152,29 +163,55 @@ export const Formula = () => {
               >
                 all
               </button>
-              <div
-                style={{ overflow: "scroll" }}
-                className="d-flex text-light gap-3"
+              <button
+                style={{
+                  borderRadius: "5px 0px 0px 5px",
+                  backgroundColor: "#f3573c",
+                  color: "#1f1f47",
+                }}
+                onClick={() => Carousel(true)}
+                className=" d-flex align-items-center mr-2"
               >
-                {symbol_datas.map((el, i) => {
-                  return (
-                    <button
-                      id={i}
-                      style={{
-                        border: "1px solid rgb(243, 87, 60)",
-                        borderRadius: "5px",
-                        background: i == select ? "rgb(243, 87, 60)" : "",
-
-                        width: "100px",
-                      }}
-                      className="px-2 pt-1 pb-1 formula5"
-                      onClick={() => (formulagetter(el, i), setSelect(i))}
-                    >
-                      {el}
-                    </button>
-                  );
-                })}
+                {"<<"}
+              </button>
+              <div className="w-100" style={{ overflow: "scroll" }}>
+                <div
+                  style={{
+                    marginLeft: car + "%",
+                    transition: "1s",
+                  }}
+                  className="d-flex text-light gap-3 w-100"
+                >
+                  {symbol_datas.map((el, i) => {
+                    return (
+                      <button
+                        id={i}
+                        style={{
+                          border: "1px solid rgb(243, 87, 60)",
+                          borderRadius: "5px",
+                          background: i == select ? "rgb(243, 87, 60)" : "",
+                          width: "100px",
+                        }}
+                        className="px-2 pt-1 pb-1 formula5"
+                        onClick={() => (formulagetter(el, i), setSelect(i))}
+                      >
+                        {el}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
+              <button
+                style={{
+                  borderRadius: "0px 5px 5px 0px",
+                  backgroundColor: "#f3573c",
+                  color: "#1f1f47",
+                }}
+                onClick={() => Carousel(false)}
+                className=" d-flex align-items-center ml-2"
+              >
+                {">>"}
+              </button>
             </div>
             <div
               style={{ display: "flex", flexWrap: "wrap" }}
@@ -319,5 +356,7 @@ export const Formula = () => {
       </div>
       <Footer></Footer>
     </div>
+  ) : (
+    <div>Login first</div>
   );
 };

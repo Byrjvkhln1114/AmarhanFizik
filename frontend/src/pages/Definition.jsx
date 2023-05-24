@@ -1,85 +1,150 @@
 import { Header, Footer } from "../component";
 import "./mystyles.css";
-import { Card } from "../component/Card";
 
 export const Definition = () => {
   return (
     <div>
       <div
-        style={{ background: "#1f1f47", height: "100vh" }}
+        style={{ background: "#1f1f47" }}
         className="d-flex flex-column  align-items-center "
       >
         <Header></Header>
-        <div style={{ overflow: "scroll" }}>
-          <Card
-            title="Механик"
-            subtitle=""
-            content={
-              <div>
-                Механик - механик хөдөлгөөнийг судалдаг физикийн салбар <br />
-                Механик хөдөлгөөн- биеүд болон тэдгээрийн бүрэлдэхүүн хэсгүүдийн
-                огторгуй дахь харилцаг байршил хугацааны явцад өөрчлөгдөх
-                үзэгдэл. <br /> Механик нь гурван хэсгээс тогтоно: класик
-                механик, харьцангуй механик, квант механик
+        <div
+          className="App"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+            gap: "20px",
+            width: "100vw",
+
+            color: "white",
+          }}
+        >
+          <div
+            style={{
+              width: "60vw",
+              height: "35vh",
+              // backgroundColor: "#222222",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "40px",
+                  fontWeight: "bold",
+                }}
+              >
+                Кинематик
               </div>
-            }
-            contenttwo={<div></div>}
-          ></Card>
-          <Card
-            title="Динамик"
-            subtitle=""
-            content={
-              <div>
-                Динамик - бие бусад биетэй харилцан үйлчлэх үйлчлэлийг тооцон
-                хөдөлгөөний хуулийг тогтоодог механикийн салбар
+            </div>
+            <div
+              style={{
+                marginLeft: "50px",
+                marginTop: "20px",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "30px",
+                  fontWeight: "bold",
+                }}
+              >
+                Кинематикийн ойлголтууд
               </div>
-            }
-            contenttwo={
               <div>
-                <div>
-                  {" "}
-                  Ньютоны нэгдүүгээр хууль: Хэрэв биед хүч үйлчлэхгүй бол бие
-                  хурдаа хадгалдаг тооллын инерциал систем олдоно. Тооллын
-                  инерциал системтэй харьцангуй шулуун жигд хөдөлдөг, эсвэл
-                  тайван байгаа тооллын системүүд бүгд инерциал тооллын систем
-                  болно. Нарны төвтэй холбоотой тооллын системийг их өндөр
-                  нарийвчлалтайгаар инерциаль тооллын систем гэж тооцож болно.
-                  Дэлхийн төвтэй холбоотой тооллын системийг дэлхий тэнхлэгээ
-                  болон нарыг тойрон эргэх хөдөлгөөнийг тооцохгүй нөхцөлд
-                  инерциаль систем гэж үзнэ. Галилейн харьцангуйн зарчим.
-                  Тооллын инерциал системд бүх механик үзэгдлүүд ижил анхны
-                  нөхцөлтэй үед ижил явагдана.
-                </div>
-                <div> </div>
+                <ul style={{ listStyleType: "circle", fontSize: "23px" }}>
+                  <li>Зай: нийт урт нь чиглэлээс үл хамааран хөдөлсөн</li>
+                  <li>
+                    Нүүлгэн шилжүүлэлт: тодорхой чиглэлд хамгийн богино зай
+                  </li>
+                  <li>Coca Cola</li>
+                  <li>Хурд: нэгж хугацаанд туулсан зам, чиглэлгүй</li>
+                  <li>Хурд: нүүлгэн шилжүүлэлтийн өөрчлөлтийн хурд</li>
+                  <li>Хурдатгал: хурдны өөрчлөлтийн хурд</li>
+                </ul>
               </div>
-            }
-          ></Card>
-          <Card
-            title=""
-            subtitle=""
-            content={<div></div>}
-            contenttwo={<div></div>}
-          ></Card>
+            </div>
+          </div>
+          <div
+            style={{
+              width: "60vw",
+              height: "35vh",
+              // backgroundColor: "#222222",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <div style={{ marginLeft: "50px" }}>
+              <div
+                style={{
+                  fontSize: "30px",
+                  fontWeight: "bold",
+                }}
+              >
+                Кинематик тэгшитгэл
+              </div>
+              <div
+                style={{
+                  fontSize: "23px",
+                }}
+              >
+                <p>s = ut + at²/2</p>
+                <p>v = u + at</p>
+                <p>v² = u² + 2as</p>
+                <p>s = (v₁ + v₂)/2 × t</p>
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              width: "60vw",
+              height: "50vh",
+              // backgroundColor: "#222222",
+            }}
+          >
+            <div style={{ marginLeft: "50px" }}>
+              <div
+                style={{
+                  fontSize: "30px",
+                  fontWeight: "bold",
+                }}
+              >
+                Linear Motion
+              </div>
+              <div>
+                <ul style={{ listStyleType: "circle", fontSize: "23px" }}>
+                  <li>Зай: нийт урт нь чиглэлээс үл хамааран хөдөлсөн</li>
+                  <li>
+                    Нүүлгэн шилжүүлэлт: тодорхой чиглэлд хамгийн богино зай
+                  </li>
+                  <li>Coca Cola</li>
+                  <li>Хурд: нэгж хугацаанд туулсан зам, чиглэлгүй</li>
+                  <li>Хурд: нүүлгэн шилжүүлэлтийн өөрчлөлтийн хурд</li>
+                  <li>Хурдатгал: хурдны өөрчлөлтийн хурд</li>
+                  <li>Шилжилтийн хугацааны график:</li>
+                </ul>
+                <p style={{ fontSize: "20px", marginLeft: "60px" }}>
+                  Градиент = хурд
+                </p>
+              </div>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <img
+                style={{ backgroundColor: "white" }}
+                src="https://znotes-static.s3.amazonaws.com/cie/as/physics-9702/635f9f2fc90bdc119bfc52cf374f275e2d6db6abe453bfce.png"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
       </div>
       <Footer></Footer>
     </div>
   );
 };
-
-{
-  /* <Card title="" subtitle="" content={<div></div>}></Card> */
-}
-{
-  /* <div style={{ width: "75vw", color: "white" }}>
-        
-        <div className="Dynamics" style={{ width: "75vw", color: "white" }}>
-          
-          
-          <li>
-            Гурав дахь хууль: хэрэв бие A нь биед хүч үзүүлдэг B, дараа нь бие B
-            нь биед тэнцүү боловч эсрэг хүч үйлчилнэ А үйлдэл-урвалын хос үүсгэх
-          </li>
-          <div>Хүч</div>
-        </div> */
-}
