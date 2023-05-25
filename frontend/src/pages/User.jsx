@@ -10,10 +10,10 @@ export const User = () => {
     const a = JSON.parse(localStorage.getItem("user"))._id;
 
     const data = await axios.post(
-      `http://localhost:8000/Userfinder/6461f6eeee11336fce35673d`
+      `https://amarhan-physics.vercel.app/Userfinder/6461f6eeee11336fce35673d`
     );
     const result = await axios.post(
-      "http://localhost:8000/FindLikedFormulasById",
+      "https://amarhan-physics.vercel.app/FindLikedFormulasById",
       {
         ids: data?.data?.LikedPosts,
       }
@@ -21,7 +21,7 @@ export const User = () => {
     setLiked(result?.data);
   };
   const edit = async (id) => {
-    const result = await axios.post("http://localhost:8000/findformula", {
+    const result = await axios.post("https://amarhan-physics.vercel.app/findformula", {
       _id: id,
     });
     localStorage.setItem("formula", JSON.stringify(result.data));

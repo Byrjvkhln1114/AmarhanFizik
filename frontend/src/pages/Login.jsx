@@ -10,12 +10,10 @@ export const Login = () => {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [err, setErr] = useState("");
-  setTimeout(() => {
-    setErr("");
-  }, 7000);
+
   const Login = async () => {
     if (Password != "" && Email != "") {
-      const result = await axios.post("http://localhost:8000/login", {
+      const result = await axios.post("https://amarhan-physics.vercel.app/login", {
         Email: Email,
         Password: Password,
       });

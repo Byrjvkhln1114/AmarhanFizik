@@ -16,7 +16,7 @@ export const Sign_Up = () => {
     if (username.length <= 20 && username.length >= 1) {
       if (password.length <= 16 && password.length >= 5) {
         if (password == repassword) {
-          const a = await axios.post("http://localhost:8000/signup", {
+          const a = await axios.post("https://amarhan-physics.vercel.app/signup", {
             Username: username,
             Email: email,
             Password: password,

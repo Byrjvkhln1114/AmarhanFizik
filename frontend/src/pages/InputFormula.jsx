@@ -12,7 +12,7 @@ export const FormulaInput = () => {
     const letter = syLetter.split(",");
     const detail = syDetail.split(",");
     const bra = Branches.split(",");
-    const resultD = axios.post("http://localhost:8000/formula", {
+    const resultD = axios.post("https://amarhan-physics.vercel.app/formula", {
       Equation: eq,
       Symbols: {
         letter: letter,

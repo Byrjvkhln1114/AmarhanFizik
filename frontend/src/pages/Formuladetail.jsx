@@ -44,13 +44,13 @@ export const Formuladetail = () => {
     quantityMeaning();
   }, [check]);
   const quantityMeaning = async () => {
-    const a = await axios.post("http://localhost:8000/quantityfind", {
+    const a = await axios.post("https://amarhan-physics.vercel.app/quantityfind", {
       symbols: JSON.parse(localStorage.getItem("formula")).Symbols.Detail,
     });
     setquantity(a.data);
   };
   const Calculate = async (id) => {
-    const result = await axios.post("http://localhost:8000/calculate", {
+    const result = await axios.post("https://amarhan-physics.vercel.app/calculate", {
       id: id,
       symbol: [a, b, c, d, e, f],
     });

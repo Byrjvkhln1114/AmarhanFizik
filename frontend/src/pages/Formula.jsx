@@ -55,7 +55,7 @@ export const Formula = () => {
     })();
   }, [check]);
   const formulagetter = async (filt, i) => {
-    const all = await axios.post("http://localhost:8000/allformula", {
+    const all = await axios.post("https://amarhan-physics.vercel.app/allformula", {
       filt: filt,
     });
     setAllequations(all);
@@ -67,14 +67,14 @@ export const Formula = () => {
     }
   };
   const moreFormulas = async (id) => {
-    const more = await axios.post("http://localhost:8000/findmoreformulas", {
+    const more = await axios.post("https://amarhan-physics.vercel.app/findmoreformulas", {
       branches: id,
     });
     setMore(more.data);
     setArrow(!arrow);
   };
   const edit = async (id) => {
-    const result = await axios.post("http://localhost:8000/findformula", {
+    const result = await axios.post("https://amarhan-physics.vercel.app/findformula", {
       _id: id,
     });
     localStorage.setItem("formula", JSON.stringify(result.data));
@@ -83,7 +83,7 @@ export const Formula = () => {
 
   const liker = async (_id, or) => {
     await likedposts();
-    const a = await axios.patch("http://localhost:8000/Formulaliker", {
+    const a = await axios.patch("https://amarhan-physics.vercel.app/Formulaliker", {
       _id: _id,
       or: liked.includes(_id) ? false : true,
       uid: JSON.parse(localStorage.getItem("user"))._id,
@@ -98,7 +98,7 @@ export const Formula = () => {
 
   const likedposts = async () => {
     const a = await JSON.parse(localStorage.getItem("user"))._id;
-    const ahha = await axios.post(`http://localhost:8000/Userfinder/${a}`);
+    const ahha = await axios.post(`https://amarhan-physics.vercel.app/Userfinder/${a}`);
     setLiked(ahha?.data?.LikedPosts);
   };
   useEffect(() => {
