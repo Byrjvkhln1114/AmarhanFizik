@@ -23,6 +23,7 @@ export const Login = () => {
         window.location.reload();
       } else {
         setErr(result?.data);
+        // /Users/imac-22/.ssh/id_ed25519
       }
     } else {
       setErr("Fill the field");
