@@ -17,18 +17,15 @@ export const Drop = () => {
             border: "1px solid black",
           }}
         >
-          <Link style={{ textDecoration: "none" }} to="/formulainput">
-            <Dropdown.Item href="#/action-2">EnterFormula</Dropdown.Item>
-          </Link>
           <Link style={{ textDecoration: "none" }} to="/User">
-            <Dropdown.Item href="#/action-2">User Info</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Хадгалсан Ё-нууд</Dropdown.Item>
           </Link>
           <Dropdown.Item
             onClick={() => (localStorage.clear(), window.location.reload())}
             href="#/action-2"
             className="text-danger"
           >
-            Logout
+            Гарах
           </Dropdown.Item>
         </Dropdown.Menu>
       ) : (

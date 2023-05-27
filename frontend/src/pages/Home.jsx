@@ -80,7 +80,7 @@ export const Home = () => {
             >
               <div className="d-flex flex-column align-items-center gap-5 justify-content-center home3">
                 <img style={{ height: "60%" }} src="Definition.png"></img>
-                <h2 className="home3-1">Definition </h2>
+                <h2 className="home3-1">Тайлбар</h2>
               </div>
             </Link>
             <Link
@@ -89,7 +89,7 @@ export const Home = () => {
             >
               <div className="d-flex flex-column align-items-center gap-5 justify-content-center home4">
                 <img style={{ height: "60%" }} src="team.png"></img>
-                <h2 className="home4-1">About us</h2>
+                <h2 className="home4-1">Бидний тухай</h2>
               </div>
             </Link>
           </div>

@@ -21,9 +21,12 @@ export const User = () => {
     setLiked(result?.data);
   };
   const edit = async (id) => {
-    const result = await axios.post("https://amarhan-physics.vercel.app/findformula", {
-      _id: id,
-    });
+    const result = await axios.post(
+      "https://amarhan-physics.vercel.app/findformula",
+      {
+        _id: id,
+      }
+    );
     localStorage.setItem("formula", JSON.stringify(result.data));
     Navigate("/formuladetail");
   };
@@ -39,7 +42,7 @@ export const User = () => {
         <Header></Header>
         <h1>Hello {JSON.parse(localStorage.getItem("user")).Username}</h1>
         <div className="d-flex gap-2 flex-column w-75">
-          <h2>Saved posts:</h2>
+          <h2>Хадгалсан Ё-нууд</h2>
           <div className="d-flex gap-5 ">
             {liked.map((el, i) => {
               return (

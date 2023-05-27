@@ -797,3 +797,16 @@
     animation-iteration-count: infinite;
   }
 }
+.liked_number {
+  display: none;
+  position: absolute;
+  margin-top: 80px;
+}
+.liked_number_hover:hover ~ .liked_number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.liked_number_hover {
+  cursor: pointer;
+}

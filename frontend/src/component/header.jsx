@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 export const Header = () => {
   return (
-    <div className="text-light header1">
+    <div className="text-light mt-4">
       <div className="header2">
         <div className="header3">
           <Link to={"/"}>
-            <img className="header4" src="Logo.png" alt="" />
+            <div style={{ width: "60px", height: "60px" }}>
+              <img className="header4 rotate " src="Logo.png" alt="" />
+            </div>
           </Link>
 
           <div className="w-40vw header5">

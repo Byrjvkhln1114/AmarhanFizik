@@ -55,9 +55,12 @@ export const Formula = () => {
     })();
   }, [check]);
   const formulagetter = async (filt, i) => {
-    const all = await axios.post("https://amarhan-physics.vercel.app/allformula", {
-      filt: filt,
-    });
+    const all = await axios.post(
+      "https://amarhan-physics.vercel.app/allformula",
+      {
+        filt: filt,
+      }
+    );
     setAllequations(all);
     setLoading(false);
     if (unselect == true) {
@@ -67,27 +70,36 @@ export const Formula = () => {
     }
   };
   const moreFormulas = async (id) => {
-    const more = await axios.post("https://amarhan-physics.vercel.app/findmoreformulas", {
-      branches: id,
-    });
+    const more = await axios.post(
+      "https://amarhan-physics.vercel.app/findmoreformulas",
+      {
+        branches: id,
+      }
+    );
     setMore(more.data);
     setArrow(!arrow);
   };
   const edit = async (id) => {
-    const result = await axios.post("https://amarhan-physics.vercel.app/findformula", {
-      _id: id,
-    });
+    const result = await axios.post(
+      "https://amarhan-physics.vercel.app/findformula",
+      {
+        _id: id,
+      }
+    );
     localStorage.setItem("formula", JSON.stringify(result.data));
     Navigate("/formuladetail");
   };
 
   const liker = async (_id, or) => {
     await likedposts();
-    const a = await axios.patch("https://amarhan-physics.vercel.app/Formulaliker", {
-      _id: _id,
-      or: liked.includes(_id) ? false : true,
-      uid: JSON.parse(localStorage.getItem("user"))._id,
-    });
+    const a = await axios.patch(
+      "https://amarhan-physics.vercel.app/Formulaliker",
+      {
+        _id: _id,
+        or: liked.includes(_id) ? false : true,
+        uid: JSON.parse(localStorage.getItem("user"))._id,
+      }
+    );
     await unShaded(!shaded);
     await setlikemsg(a?.data);
     await handleShow();
@@ -98,7 +110,9 @@ export const Formula = () => {
 
   const likedposts = async () => {
     const a = await JSON.parse(localStorage.getItem("user"))._id;
-    const ahha = await axios.post(`https://amarhan-physics.vercel.app/Userfinder/${a}`);
+    const ahha = await axios.post(
+      `https://amarhan-physics.vercel.app/Userfinder/${a}`
+    );
     setLiked(ahha?.data?.LikedPosts);
   };
   useEffect(() => {
@@ -161,8 +175,9 @@ export const Formula = () => {
                 className="px-2 pt-1 pb-1 formula5  mr-3 text-light"
                 onClick={() => window.location.reload()}
               >
-                all
+                Бүгд
               </button>
+
               <button
                 style={{
                   borderRadius: "5px 0px 0px 5px",
@@ -230,7 +245,23 @@ export const Formula = () => {
                           {el?.Equation[0]}
                         </div>
                         <div className="d-flex w-100 justify-content-around">
-                          <div className=" m-2">{el?.Likes} people saved</div>
+                          <div className=" d-flex m-2 gap-1 justify-content-center align-items-center">
+                            <div className="liked_number_hover text-success d-flex justify-content-center align-items-center">
+                              {el?.Likes}
+                            </div>
+
+                            <div
+                              style={{
+                                border: "3px solid rgb(243, 87, 60)",
+                                borderRadius: "5px",
+                                backgroundColor: "white",
+                                height: "50px",
+                              }}
+                              className="liked_number text-dark  "
+                            >
+                              Хадгалсан хүний тоо
+                            </div>
+                          </div>
                           {liked.includes(el._id) ||
                           (likedimg == true && el?._id == l) ? (
                             <button
@@ -243,7 +274,7 @@ export const Formula = () => {
                               }}
                               className="mt-2 px-2 pt-1 pb-1   mr-3 "
                             >
-                              Saved
+                              хадгалсан
                             </button>
                           ) : (
                             <button
@@ -263,7 +294,7 @@ export const Formula = () => {
                               }}
                               className="mt-2 px-2 pt-1 pb-1 liked  mr-3 text-light"
                             >
-                              Save
+                              хадгалах
                             </button>
                           )}
 
@@ -297,8 +328,21 @@ export const Formula = () => {
                                 <div> {ej?.Equation[0]}</div>
                               </div>
                               <div className="d-flex w-100 justify-content-around">
-                                <div className=" m-2">
-                                  {ej?.Likes} people saved
+                                <div className=" d-flex m-2 gap-1 justify-content-center align-items-center">
+                                  <div className="liked_number_hover text-success d-flex justify-content-center align-items-center">
+                                    {el?.Likes}
+                                  </div>
+                                  <div
+                                    style={{
+                                      border: "3px solid rgb(243, 87, 60)",
+                                      borderRadius: "5px",
+                                      backgroundColor: "white",
+                                      height: "50px",
+                                    }}
+                                    className="liked_number text-dark  "
+                                  >
+                                    Хадгалсан хүний тоо
+                                  </div>
                                 </div>
                                 {liked.includes(ej._id) ||
                                 (likedimg == true && ej?._id == l) ? (
@@ -317,7 +361,7 @@ export const Formula = () => {
                                     }}
                                     className="mt-2 px-2 pt-1 pb-1   mr-3 "
                                   >
-                                    Saved
+                                    хадгалсан
                                   </button>
                                 ) : (
                                   <button
@@ -334,11 +378,10 @@ export const Formula = () => {
                                       backgroundColor: "rgb(243, 87, 60)",
                                       border: "1px solid rgb(243, 87, 60)",
                                       borderRadius: "4px",
-                                      width: "50px",
                                     }}
                                     className="mt-2 px-2 pt-1 pb-1 liked  mr-3 text-light"
                                   >
-                                    Save
+                                    хадгалах
                                   </button>
                                 )}
                               </div>

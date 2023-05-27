@@ -64,7 +64,7 @@ export const About = () => {
               >
                 <img
                   style={{ height: "28vh", borderRadius: "10px" }}
-                  src="bayra.jpeg"
+                  src="https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg"
                   alt=""
                 />
               </div>
@@ -91,19 +91,19 @@ export const About = () => {
                     />
                   </a>
                   <a
-                    href="https://www.facebook.com/profile.php?id=100076193163624&mibextid=LQQJ4d"
+                    href="https://www.facebook.com/profile.php?id=100076193163624"
                     target="_blank"
                   >
                     <img
                       className="w-[30px] sm:w-[30px]"
-                      src="facebook.png"
+                      src="https://assets.stickpng.com/images/60fea6773d624000048712b5.png"
                       alt=""
                     />
                   </a>
                   <a href="https://github.com/Byrjvkhln1114" target="_blank">
                     <img
                       className="w-[30px] sm:w-[30px]"
-                      src="github.png"
+                      src="https://www.nicepng.com/png/full/52-520535_free-files-github-github-icon-png-white.png"
                       alt=""
                     />
                   </a>
@@ -135,7 +135,7 @@ export const About = () => {
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                   }}
-                  src="elbrl.png"
+                  src="elberel.png"
                   alt=""
                 />
               </div>
@@ -164,14 +164,14 @@ export const About = () => {
                   >
                     <img
                       className="w-[30px] sm:w-[30px]"
-                      src="facebook.png"
+                      src="https://assets.stickpng.com/images/60fea6773d624000048712b5.png"
                       alt=""
                     />
                   </a>
                   <a href="https://github.com/elbrl" target="_blank">
                     <img
                       className="w-[30px] sm:w-[30px]"
-                      src="github.png"
+                      src="https://www.nicepng.com/png/full/52-520535_free-files-github-github-icon-png-white.png"
                       alt=""
                     />
                   </a>
@@ -198,7 +198,7 @@ export const About = () => {
               >
                 <img
                   style={{ height: "28vh", borderRadius: "10px" }}
-                  src="chinbo.png"
+                  src="https://scontent.fuln1-1.fna.fbcdn.net/v/t1.6435-9/81537081_2578723012246855_3291626626000879616_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=auQLrmMT-nkAX-SNIR_&_nc_ht=scontent.fuln1-1.fna&oh=00_AfBBwHmu3DRYc50xXwYJU2ShCM2ejYrxJuXpNBPQYl21kg&oe=6498F89C"
                   alt=""
                 />
               </div>
@@ -230,14 +230,14 @@ export const About = () => {
                   >
                     <img
                       className="w-[30px] sm:w-[30px]"
-                      src="facebook.png"
+                      src="https://assets.stickpng.com/images/60fea6773d624000048712b5.png"
                       alt=""
                     />
                   </a>{" "}
                   <a href="https://github.com/Chinbo09" target="_blank">
                     <img
                       className="w-[30px] sm:w-[30px]"
-                      src="github.png"
+                      src="https://www.nicepng.com/png/full/52-520535_free-files-github-github-icon-png-white.png"
                       alt=""
                     />
                   </a>
@@ -264,7 +264,7 @@ export const About = () => {
               >
                 <img
                   style={{ height: "28vh", borderRadius: "10px" }}
-                  src="bayra.jpeg"
+                  src="https://scontent.fuln1-2.fna.fbcdn.net/v/t39.30808-6/221397710_886313845255102_6510785775220678317_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=lH43KhTChTcAX9h_8QX&_nc_ht=scontent.fuln1-2.fna&oh=00_AfAZkcgDDa0p5husGD4OnUFEWwoL7ZSok0L3Az6DxRxfqQ&oe=64776ABC"
                   alt=""
                 />
               </div>
@@ -296,14 +296,14 @@ export const About = () => {
                   >
                     <img
                       className="w-[30px] sm:w-[30px]"
-                      src="facebook.png"
+                      src="https://assets.stickpng.com/images/60fea6773d624000048712b5.png"
                       alt=""
                     />
                   </a>{" "}
                   <a href="https://github.com/Piroshki69" target="_blank">
                     <img
                       className="w-[30px] sm:w-[30px]"
-                      src="github.png"
+                      src="https://www.nicepng.com/png/full/52-520535_free-files-github-github-icon-png-white.png"
                       alt=""
                     />
                   </a>

@@ -1,178 +1,169 @@
-#button1{
-    border-radius: 10px;
-    border: none;
-    color: white;
-    font-weight: 700;
+#button1 {
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+#button1:hover {
+  background-color: rgb(196, 66, 43);
+  transition: ease-in 0.4s;
+}
+.dropdown1 {
+  background-color: rgb(243, 87, 60) !important;
+  border: none !important;
+  height: 60px !important;
+  width: 200px !important;
+  border-radius: 10px !important;
+}
+.dropdown1:hover {
+  background-color: rgb(196, 66, 43) !important;
+  transition: ease-in 0.4s;
+}
+.dropdown2 {
+  width: 200px;
+}
+.header1 {
+  display: flex;
+  justify-content: center;
+  height: 10%;
+  align-items: center;
+}
+.header2 {
+  width: 75vw;
+}
+.header3 {
+  height: 7vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header4 {
+  height: 60px;
+}
+
+.header5 {
+  width: 55vw;
+}
+.header6 {
+  gap: 3rem;
+}
+@media only screen and (max-width: 360px) {
+  .header1 {
+    display: none;
+  }
+  .dropdown1 {
+    height: 40px !important;
+    width: 80px !important;
+    font-size: 12px !important;
+  }
+  .footer {
+    display: none;
+  }
+  .footeras {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 361px) and (max-width: 640px) {
+  .header1 {
+    display: none;
+  }
+  .footer {
+    display: none;
+  }
+  .footer-main {
+    height: 200px;
+  }
+  .footeras {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 768px) and (min-width: 641px) {
+  .dropdown1 {
+    height: 50px !important;
+    width: 120px !important;
+    font-size: 15px !important;
+  }
+  .dropdown2 {
+    width: 120px !important;
+    font-size: 15px !important;
+  }
+  .header2 {
+    font-size: 14px;
+  }
+  .header4 {
+    height: 40px;
+    width: 40px;
+  }
+  .header6 {
+    gap: 30px !important;
+    margin-right: 15px;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+  .dropdown1 {
+    height: 60px !important;
+    width: 160px !important;
+    font-size: 18px !important;
+  }
+  .dropdown2 {
+    width: 100px !important;
+  }
+  .header4 {
+    height: 55px;
+    width: 50px;
+  }
+  .header1 {
+    margin-top: 3vh;
+  }
+  .header2 {
     font-size: 18px;
+  }
+  .header6 {
+    gap: 30px !important;
+    margin-right: 15px;
+  }
 }
-#button1:hover{
-    background-color: rgb(196, 66, 43);
-    transition:ease-in 0.4s ;
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .header1 {
+    margin-top: 3vh;
+  }
+  .dropdown1 {
+    font-size: 19px !important;
+  }
+  .header6 {
+    margin-right: 3rem;
+  }
 }
-.dropdown1{
-    background-color: rgb(243, 87, 60) !important;
-    border: none!important;
-    height: 60px!important;
-    width: 200px!important;
-    border-radius: 10px!important;
+@media only screen and (max-width: 1536px) and (min-width: 1281px) {
+  .dropdown1 {
+    font-size: 21px !important;
+  }
+  .header2 {
+    font-size: 21px;
+  }
+  .header1 {
+    margin-top: 3vh;
+  }
 }
-.dropdown1:hover{
-    background-color: rgb(196, 66, 43) !important;
-    transition:ease-in 0.4s ;
+
+/* @-webkit-keyframes infinite_rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
-.dropdown2{
-    width: 200px; 
+
+.infinite_rotate {
+  -webkit-animation: rotating 2s linear infinite;
+} */
+.rotate {
+  animation: rotate 10s linear infinite;
 }
-.header1{
-    display: flex;
-    justify-content: center;
-    height: 10%;
-    align-items: center;
-}
-.header2{
-    width: 75vw
-}
-.header3{
-    height: 7vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.header4{
-    height: 60px
-}
-.header5{
-    width: 55vw
-}
-.header6{
-    gap: 3rem;
-}
-@media only screen and (max-width:360px){
-    /* .dropdown1{
-        height: 40px!important;
-        width:90px!important;
-        font-size: 12px!important;
-    }
-    .dropdown2{
-        width: 100px!important;
-        font-size: 12px!important;
-    }
-    .header2{
-        font-size: 12px;
-        width: 100%;
-    }
-    .header4{
-        height: 30px;
-        width: 40px;
-    } 
-    .header5{
-        width: 100%;
-    }
-    .header6{
-        gap: 15px!important;
-        margin-right: 5px;
-    } */
-    .header1{
-        display: none;
-    }
-}
-@media only screen and (min-width:361px) and (max-width:640px){
-    /* .dropdown1{
-        height: 40px!important;
-        width:90px!important;
-        font-size: 12px!important;
-    }
-    .dropdown2{
-        width: 100px!important;
-        font-size: 12px!important;
-    }
-    .header2{
-        font-size: 12px;
-        width: 100%;
-    }
-    .header3{
-        width: 80vw;
-    }
-    .header4{
-        height: 30px;
-        width: 40px;
-    } 
-    .header5{
-        width: 100%;
-    }
-    .header6{
-        gap: 15px!important;
-        margin-right: 5px;
-    } */
-    .header1{
-        display: none;
-    }
-}
-@media only screen and (max-width:768px) and (min-width:641px){
-    .dropdown1{
-        height: 50px!important;
-        width:120px!important;
-        font-size: 15px!important;
-    }
-    .dropdown2{
-        width: 120px!important;
-        font-size: 15px!important;
-    }
-    .header2{
-        font-size: 14px;
-    }
-    .header4{
-        height: 40px;
-        width: 40px;
-    }
-    .header6{
-        gap: 30px!important;
-        margin-right: 15px;
-    } 
-}
-@media only screen and (max-width:1024px) and (min-width:769px){
-    .dropdown1{
-        height: 60px!important;
-        width:160px!important;
-        font-size: 18px!important;
-    }
-    .dropdown2{
-        width: 100px!important;
-    }
-    .header4{
-        height: 55px;
-        width: 50px;
-    }
-    .header1{
-        margin-top: 3vh;
-    }
-    .header2{
-        font-size: 18px;
-    }
-    .header6{
-        gap: 30px!important;
-        margin-right: 15px;
-    } 
-}
-@media only screen and (max-width:1280px) and (min-width:1025px){
-    .header1{
-        margin-top: 3vh;
-    }
-    .dropdown1{
-        font-size: 19px!important;
-    }
-    .header6{
-        margin-right: 3rem;
-    } 
-}
-@media only screen and (max-width:1536px) and (min-width:1281px){
-    .dropdown1{
-        font-size: 21px!important;
-    }
-    .header2{
-        font-size: 21px;
-    }
-    .header1{
-        margin-top: 3vh;
-    }
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }
