@@ -44,16 +44,22 @@ export const Formuladetail = () => {
     quantityMeaning();
   }, [check]);
   const quantityMeaning = async () => {
-    const a = await axios.post("https://amarhan-physics.vercel.app/quantityfind", {
-      symbols: JSON.parse(localStorage.getItem("formula")).Symbols.Detail,
-    });
+    const a = await axios.post(
+      "https://amarhan-physics.vercel.app/quantityfind",
+      {
+        symbols: JSON.parse(localStorage.getItem("formula")).Symbols.Detail,
+      }
+    );
     setquantity(a.data);
   };
   const Calculate = async (id) => {
-    const result = await axios.post("https://amarhan-physics.vercel.app/calculate", {
-      id: id,
-      symbol: [a, b, c, d, e, f],
-    });
+    const result = await axios.post(
+      "https://amarhan-physics.vercel.app/calculate",
+      {
+        id: id,
+        symbol: [a, b, c, d, e, f],
+      }
+    );
     setAns(result.data[0]);
   };
   return (
@@ -63,13 +69,16 @@ export const Formuladetail = () => {
         style={{ background: "#1f1f47", height: "96vh" }}
       >
         <Header></Header>
-        <div className="d-flex  text-light w-75 gap-5">
+        <div
+          style={{ display: "flex", flexWrap: "wrap" }}
+          className=" text-light w-75 gap-5 text mt-4"
+        >
           <div
             style={{
               border: "1px solid rgb(243, 87, 60) ",
               borderRadius: "5px",
             }}
-            className="d-flex flex-column text-light w-25 fs-5 gap-3 p-4"
+            className="d-flex flex-column text-light fs-5 gap-3 p-4"
           >
             <div style={{ borderBottom: "1px solid rgb(243, 87, 60)" }}>
               <div className="mb-3">{fdata?.Equation[1]}</div>
@@ -183,7 +192,7 @@ export const Formuladetail = () => {
               onclicker={() => Calculate(fdata?._id)}
             ></Buton>
           </div>
-          <div style={{ width: "20%" }} className="d-flex flex-column ">
+          <div style={{ width: "400px" }} className="d-flex flex-column ">
             <div className="d-flex w-100">
               <div
                 style={{ width: "30%", border: "1px solid rgb(243, 87, 60" }}

@@ -79,7 +79,7 @@ export const Home = () => {
               to={"definition"}
             >
               <div className="d-flex flex-column align-items-center gap-5 justify-content-center home3">
-                <img style={{ height: "60%" }} src="Definition.png"></img>
+                <img style={{ height: "60%" }} src="definition.png"></img>
                 <h2 className="home3-1">Тайлбар</h2>
               </div>
             </Link>

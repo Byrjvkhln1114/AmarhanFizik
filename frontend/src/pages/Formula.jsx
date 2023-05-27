@@ -160,7 +160,7 @@ export const Formula = () => {
         {loading == true ? (
           <div
             style={{ color: "rgb(243, 87, 60" }}
-            className="w-100 d-flex justify-content-center align-items-center"
+            className="w-100 d-flex justify-content-center align-items-center mt-5"
           >
             <h1> Loading...</h1>
           </div>
