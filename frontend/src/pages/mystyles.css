@@ -2,6 +2,9 @@
   background: #1f1f47;
   height: 100vh;
 }
+.stickyheader {
+  position: absolute;
+}
 .forgot2 {
   height: 65vh;
   background: white;

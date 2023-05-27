@@ -13,7 +13,6 @@ export const Drop = () => {
         <Dropdown.Menu
           style={{
             width: "200px",
-
             border: "1px solid black",
           }}
         >
