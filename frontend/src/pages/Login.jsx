@@ -10,13 +10,18 @@ export const Login = () => {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [err, setErr] = useState("");
+  const [Loading, setLoading] = useState(false);
 
   const Login = async () => {
+    setLoading(true);
     if (Password != "" && Email != "") {
-      const result = await axios.post("https://amarhan-physics.vercel.app/login", {
-        Email: Email,
-        Password: Password,
-      });
+      const result = await axios.post(
+        "https://amarhan-physics.vercel.app/login",
+        {
+          Email: Email,
+          Password: Password,
+        }
+      );
       if (typeof result.data === "object") {
         localStorage.setItem("user", JSON.stringify(result.data));
         navigate("/");
@@ -28,6 +33,7 @@ export const Login = () => {
     } else {
       setErr("Fill the field");
     }
+    setLoading(false);
   };
   return (
     <div>
@@ -68,12 +74,14 @@ export const Login = () => {
             <div className="text-danger w-100 d-flex justify-content-center">
               {err}
             </div>
+
             <Buton
               onclicker={Login}
-              content={"Нэвтрэх"}
+              content={Loading == true ? "Loading" : "Нэвтрэх"}
               width={"100%"}
               height={"5vh"}
             ></Buton>
+
             <h5 className="login5">
               <span style={{ color: "#7D7D7D" }}>Та бүртгэлтэй юу? ㅤ</span>
               <Link style={{ textDecoration: "none" }} to="/signup">
