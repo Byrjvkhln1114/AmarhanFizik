@@ -100,6 +100,14 @@
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 769px) {
+  .hiddennn {
+    display: flex;
+    align-items: "center";
+    flex-direction: "column";
+    gap: "80px";
+    width: "100vw";
+    color: "white";
+  }
   .dropdown1 {
     height: 60px !important;
     width: 160px !important;
@@ -124,6 +132,14 @@
   }
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .hiddennn {
+    display: flex;
+    align-items: "center";
+    flex-direction: "column";
+    gap: "80px";
+    width: "100vw";
+    color: "white";
+  }
   .header1 {
     margin-top: 3vh;
   }
@@ -135,6 +151,14 @@
   }
 }
 @media only screen and (max-width: 1536px) and (min-width: 1281px) {
+  .hiddennn {
+    display: flex;
+    align-items: "center";
+    flex-direction: "column";
+    gap: "80px";
+    width: "100vw";
+    color: "white";
+  }
   .dropdown1 {
     font-size: 21px !important;
   }

@@ -9,19 +9,20 @@ export const About = () => {
     <div
       style={{
         backgroundColor: "#1f1f47",
-        height: "100vh",
+
         width: "100vw",
         color: "white",
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
       }}
+      className="bjdaaaa"
     >
       <Header></Header>
       <div
         style={{
           width: "80vw",
-          height: "80vh",
+
           display: "flex",
           alignItems: "center",
         }}
@@ -42,7 +43,10 @@ export const About = () => {
               display: "flex",
               width: "80vw",
               justifyContent: "space-around",
+              flex: "wrap",
+              gap: "100px",
             }}
+            className="flex-wrap"
           >
             <div
               style={{
@@ -55,8 +59,6 @@ export const About = () => {
             >
               <div
                 style={{
-                  height: "31vh",
-                  width: "15vw",
                   display: "flex",
                   justifyContent: "center",
                   padding: "2vh",
@@ -121,8 +123,6 @@ export const About = () => {
             >
               <div
                 style={{
-                  height: "31vh",
-                  width: "15vw",
                   display: "flex",
                   justifyContent: "center",
                   padding: "2vh",
@@ -189,8 +189,6 @@ export const About = () => {
             >
               <div
                 style={{
-                  height: "31vh",
-                  width: "15vw",
                   display: "flex",
                   justifyContent: "center",
                   padding: "2vh",
@@ -255,8 +253,6 @@ export const About = () => {
             >
               <div
                 style={{
-                  height: "31vh",
-                  width: "15vw",
                   display: "flex",
                   justifyContent: "center",
                   padding: "2vh",

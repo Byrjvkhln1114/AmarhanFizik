@@ -296,6 +296,12 @@
   }
 }
 @media only screen and (max-width: 375px) {
+  .hiddennn {
+    display: none;
+  }
+  .nonhidden {
+    display: flex;
+  }
   .sign1 {
     height: 65vh;
     background: white;
@@ -410,6 +416,12 @@
   }
 }
 @media only screen and (min-width: 376px) and (max-width: 640px) {
+  .hiddennn {
+    display: none;
+  }
+  .nonhidden {
+    display: flex;
+  }
   .sign1 {
     height: 65vh;
     background: white;
@@ -525,6 +537,12 @@
   }
 }
 @media only screen and (max-width: 768px) and (min-width: 641px) {
+  .hiddennn {
+    display: none;
+  }
+  .nonhidden {
+    display: flex;
+  }
   .sign1 {
     height: 65vh;
     background: white;
@@ -645,6 +663,14 @@
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 769px) {
+  .hiddennn {
+    display: "flex";
+    align-items: "center";
+    flex: "column";
+    gap: "80px";
+    width: "100vw";
+    color: "white";
+  }
   .home2:hover {
     width: 107%;
     height: 107%;
@@ -772,6 +798,14 @@
   }
 }
 @media only screen and (min-width: 1025px) {
+  .hiddennn {
+    display: "flex";
+    align-items: "center";
+    flex: "column";
+    gap: "80px";
+    width: "100vw";
+    color: "white";
+  }
   .home2:hover {
     width: 107%;
     height: 107%;

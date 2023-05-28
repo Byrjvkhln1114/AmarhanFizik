@@ -5,25 +5,16 @@ export const Definition = () => {
   return (
     <div>
       <div
-        style={{ background: "#1f1f47" }}
+        style={{ background: "#1f1f47", height: "100vh" }}
         className="d-flex flex-column  align-items-center "
       >
         <div className="stickyheader">
           <Header></Header>
         </div>
-
-        <div
-          className="App"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-            gap: "80px",
-            width: "100vw",
-
-            color: "white",
-          }}
-        >
+        <div className="nonhidden text-light">
+          Дэлгэц хэт жижиг байгаа тул компьютерээс оролдож үзнэ үү.
+        </div>
+        <div className=" hiddennn">
           <div
             style={{
               width: "60vw",
